@@ -75,4 +75,4 @@ archive_generator:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/kaddopur/kaddopur.github.com
+  repo: git@github.com:kaddopur/kaddopur.github.com.git
