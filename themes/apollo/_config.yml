@@ -1,0 +1,26 @@
+menu:
+    Blog: /
+    Archive: /archives/
+    Twitter: https://twitter.com/kaddopur
+    GitHub: https://github.com/kaddopur
+    Rss: /atom.xml
+
+favicon: /favicon.png
+logo: /favicon.png
+
+# Comment
+# e.g disqus: seansun
+disqus: jason_c_huang
+duoshuo: 
+
+# Analytics
+# google-analytics:
+ga: UA-6593436-3
+
+# Copyright Infomation
+startyear: 2016
+
+# Font CDN
+#true : use google fonts api, not stable for chinese visitor sometimes, caused by force majeure factor
+#false: use useso fonts api instead of google's, great response speed for chinese visitor
+googlefonts: false
