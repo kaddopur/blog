@@ -2,7 +2,7 @@
 title: 四年多來的第一篇
 s: new-post-after-4-years
 date: 2016-05-09 15:12:16
-tags: personal
+categories: 隨筆
 ---
 
 最近又開始想寫 blog 了，
