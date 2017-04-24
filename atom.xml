@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/"/>
-  <updated>2017-04-07T09:14:29.000Z</updated>
+  <updated>2017-04-24T04:11:13.000Z</updated>
   <id>http://kaddopur.github.io/</id>
   
   <author>
@@ -16,11 +16,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Y2017W16</title>
+    <link href="http://kaddopur.github.io/2017/04/24/Y2017W16/"/>
+    <id>http://kaddopur.github.io/2017/04/24/Y2017W16/</id>
+    <published>2017-04-24T10:04:12.000Z</published>
+    <updated>2017-04-24T04:11:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h3><ul>
+<li><a href="https://www.amazon.com/Programming-Phoenix-Productive-Reliable-Fast/dp/1680501453" target="_blank" rel="external">Programming Phoenix: Productive |&gt; Reliable |&gt; Fast</a> - <em>Chris McCord</em><ul>
+<li>Chapter 4 - Ecto and Changesets</li>
+<li>Chapter 5 - Authenticating Users</li>
+</ul>
+</li>
+<li><a href="https://www.amazon.cn/gp/product/B01J9MZPPO" target="_blank" rel="external">软技能 代码之外的生存指南</a> - <em>John Z. Sonmez, 王小刚</em><ul>
+<li>Chapter 1 ~ 16</li>
+</ul>
+</li>
+</ul>
+<h3 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h3><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+<h3 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h3><ul>
+<li><a href="https://egghead.io/lessons/react-understand-the-difference-between-the-react-router-v4-router-types" target="_blank" rel="external">Understand the Difference Between the React Router v4 Router Types</a></li>
+</ul>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Books&quot;&gt;&lt;a href=&quot;#Books&quot; class=&quot;headerlink&quot; title=&quot;Books&quot;&gt;&lt;/a&gt;Books&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Programming-Phoenix-Productive-Reliable-Fast/dp/1680501453&quot;&gt;Programming Phoenix: Productive |&amp;gt; Reliable |&amp;gt; Fast&lt;/a&gt; - &lt;em&gt;Chris McCord&lt;/em&gt;&lt;ul&gt;
+&lt;li&gt;Chapter 4 - Ecto and Changesets&lt;/li&gt;
+&lt;li&gt;Chapter 5 - Authenticating Users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.cn/gp/product/B01J9MZPPO&quot;&gt;软技能 代码之外的生存指南&lt;/a&gt; - &lt;em&gt;John Z. Sonmez, 王小刚&lt;/em&gt;&lt;ul&gt;
+&lt;li&gt;Chapter 1 ~ 16&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Languages&quot;&gt;&lt;a href=&quot;#Languages&quot; class=&quot;headerlink&quot; title=&quot;Languages&quot;&gt;&lt;/a&gt;Languages&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://iknow.jp&quot;&gt;iKnow!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://lingvist.com/&quot;&gt;LINGVIST&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Tutorials&quot;&gt;&lt;a href=&quot;#Tutorials&quot; class=&quot;headerlink&quot; title=&quot;Tutorials&quot;&gt;&lt;/a&gt;Tutorials&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://egghead.io/lessons/react-understand-the-difference-between-the-react-router-v4-router-types&quot;&gt;Understand the Difference Between the React Router v4 Router Types&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="週記" scheme="http://kaddopur.github.io/categories/%E9%80%B1%E8%A8%98/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>四年多來的第一篇</title>
     <link href="http://kaddopur.github.io/2016/05/09/new-post-after-4-years/"/>
     <id>http://kaddopur.github.io/2016/05/09/new-post-after-4-years/</id>
     <published>2016-05-09T07:12:16.000Z</published>
-    <updated>2017-04-07T09:14:29.000Z</updated>
+    <updated>2017-04-24T04:11:13.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近又開始想寫 blog 了，<br>上一次有這個想法是在 4 年前用 octopress 來架靜態網站，<br>不過才寫了兩篇就沒戲了<br>其中一篇還是像這篇一樣的心得文QQ</p>
 <p>希望這次能持續久一點</p>
@@ -34,8 +90,8 @@
     
     </summary>
     
+      <category term="隨筆" scheme="http://kaddopur.github.io/categories/%E9%9A%A8%E7%AD%86/"/>
     
-      <category term="personal" scheme="http://kaddopur.github.io/tags/personal/"/>
     
   </entry>
   
