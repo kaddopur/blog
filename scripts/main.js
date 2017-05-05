@@ -41,7 +41,10 @@
 		e.preventDefault();
 		$('body').addClass('search-on');
         $('.input-field').addClass('active');
-        $('#search_input').focus();
+        
+        setTimeout(function() {
+            $('#search_input').focus();
+        }, 50);
 	});
 	$('#search_input').blur(function() {
 		if ( $('#search_input').val() === '' ) {

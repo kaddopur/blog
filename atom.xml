@@ -55,9 +55,9 @@
     <summary type="html">
     
       &lt;h2 id=&quot;Articles&quot;&gt;&lt;a href=&quot;#Articles&quot; class=&quot;headerlink&quot; title=&quot;Articles&quot;&gt;&lt;/a&gt;Articles&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.louie.lu/2017/04/30/%E9%96%8B%E7%99%BC%E4%BA%BA%E5%93%A1%E7%9A%84%E9%9D%A2%E8%A9%A6%E6%8C%87%E5%8D%97-a-developers-guide-to-interviewing/&quot;&gt;開發人員的面試指南 – A developer’s guide to interviewing&lt;/a&gt;&lt;br&gt;  面試時除了面試官問你問題，你也可以反過來詢問這間公司的工作環境、獲利手段或願景等等。文中列舉你可能會想問的問題，並依詢問對象區分為工程師、管理階層以及 CTO。很適合已有實習經驗或是想換工作的工程師閱讀。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://mathiasbynens.github.io/rel-noopener/&quot;&gt;About rel=noopener&lt;/a&gt;&lt;br&gt;  網頁中的 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 在連至外部網站時，需要帶上 &lt;code&gt;rel=&amp;quot;noopener&amp;quot;&lt;/code&gt;，以避免惡意網站利用 &lt;code&gt;window.opener&lt;/code&gt; 來改動原始網頁。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://softnshare.wordpress.com/2016/02/24/10classprogrammerbooks/&quot;&gt;每位認真的程式設計師都要讀的10本經典書&lt;/a&gt;&lt;br&gt;  看過其中三本&lt;blockquote&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.louie.lu/2017/04/30/%E9%96%8B%E7%99%BC%E4%BA%BA%E5%93%A1%E7%9A%84%E9%9D%A2%E8%A9%A6%E6%8C%87%E5%8D%97-a-developers-guide-to-interviewing/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;開發人員的面試指南 – A developer’s guide to interviewing&lt;/a&gt;&lt;br&gt;  面試時除了面試官問你問題，你也可以反過來詢問這間公司的工作環境、獲利手段或願景等等。文中列舉你可能會想問的問題，並依詢問對象區分為工程師、管理階層以及 CTO。很適合已有實習經驗或是想換工作的工程師閱讀。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mathiasbynens.github.io/rel-noopener/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;About rel=noopener&lt;/a&gt;&lt;br&gt;  網頁中的 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 在連至外部網站時，需要帶上 &lt;code&gt;rel=&amp;quot;noopener&amp;quot;&lt;/code&gt;，以避免惡意網站利用 &lt;code&gt;window.opener&lt;/code&gt; 來改動原始網頁。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://softnshare.wordpress.com/2016/02/24/10classprogrammerbooks/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每位認真的程式設計師都要讀的10本經典書&lt;/a&gt;&lt;br&gt;  看過其中三本&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;The Pragmatic Programmer&lt;br&gt; (程序員修煉之道︰從小工到專家︰評注版)&lt;/li&gt;
 &lt;li&gt;The Mythical Man-month: Essays on Software Engineering 👍&lt;br&gt; (人月神話:軟體專案管理之道)&lt;/li&gt;
@@ -116,12 +116,12 @@
     <summary type="html">
     
       &lt;h2 id=&quot;Leetcode&quot;&gt;&lt;a href=&quot;#Leetcode&quot; class=&quot;headerlink&quot; title=&quot;Leetcode&quot;&gt;&lt;/a&gt;Leetcode&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/merge-sorted-array/#/description&quot;&gt;88. Merge Sorted Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-array/#/description&quot;&gt;26. Remove Duplicates from Sorted Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/third-maximum-number/#/description&quot;&gt;414. Third Maximum Number&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/#/description&quot;&gt;448. Find All Numbers Disappeared in an Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/k-diff-pairs-in-an-array/#/description&quot;&gt;532. K-diff Pairs in an Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/array-partition-i/#/description&quot;&gt;561. Array Partition I&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/merge-sorted-array/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;88. Merge Sorted Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-array/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;26. Remove Duplicates from Sorted Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/third-maximum-number/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;414. Third Maximum Number&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;448. Find All Numbers Disappeared in an Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/k-diff-pairs-in-an-array/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;532. K-diff Pairs in an Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/array-partition-i/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;561. Array Partition I&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -162,12 +162,12 @@
     <summary type="html">
     
       &lt;h2 id=&quot;Books&quot;&gt;&lt;a href=&quot;#Books&quot; class=&quot;headerlink&quot; title=&quot;Books&quot;&gt;&lt;/a&gt;Books&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Programming-Phoenix-Productive-Reliable-Fast/dp/1680501453&quot;&gt;Programming Phoenix: Productive |&amp;gt; Reliable |&amp;gt; Fast&lt;/a&gt; - &lt;em&gt;Chris McCord&lt;/em&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Programming-Phoenix-Productive-Reliable-Fast/dp/1680501453&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Programming Phoenix: Productive |&amp;gt; Reliable |&amp;gt; Fast&lt;/a&gt; - &lt;em&gt;Chris McCord&lt;/em&gt;&lt;ul&gt;
 &lt;li&gt;Chapter 4 - Ecto and Changesets&lt;/li&gt;
 &lt;li&gt;Chapter 5 - Authenticating Users&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.amazon.cn/gp/product/B01J9MZPPO&quot;&gt;软技能 代码之外的生存指南&lt;/a&gt; - &lt;em&gt;John Z. Sonmez, 王小刚&lt;/em&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.cn/gp/product/B01J9MZPPO&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;软技能 代码之外的生存指南&lt;/a&gt; - &lt;em&gt;John Z. Sonmez, 王小刚&lt;/em&gt;&lt;ul&gt;
 &lt;li&gt;Chapter 1 ~ 16&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
