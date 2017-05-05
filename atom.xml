@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/blog/"/>
-  <updated>2017-05-05T10:53:06.000Z</updated>
+  <updated>2017-05-05T11:00:20.000Z</updated>
   <id>http://kaddopur.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://kaddopur.github.io/blog/2017/04/29/Y2017W17/"/>
     <id>http://kaddopur.github.io/blog/2017/04/29/Y2017W17/</id>
     <published>2017-04-29T10:04:12.000Z</published>
-    <updated>2017-05-05T10:53:06.000Z</updated>
+    <updated>2017-05-05T11:00:20.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h2><ul>
 <li><a href="https://leetcode.com/problems/merge-sorted-array/#/description" target="_blank" rel="external">88. Merge Sorted Array</a></li>
@@ -66,7 +66,7 @@
     <link href="http://kaddopur.github.io/blog/2017/04/22/Y2017W16/"/>
     <id>http://kaddopur.github.io/blog/2017/04/22/Y2017W16/</id>
     <published>2017-04-22T10:04:12.000Z</published>
-    <updated>2017-05-05T10:53:30.000Z</updated>
+    <updated>2017-05-05T11:00:20.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><ul>
 <li><a href="https://www.amazon.com/Programming-Phoenix-Productive-Reliable-Fast/dp/1680501453" target="_blank" rel="external">Programming Phoenix: Productive |&gt; Reliable |&gt; Fast</a> - <em>Chris McCord</em><ul>
@@ -117,7 +117,7 @@
     <link href="http://kaddopur.github.io/blog/2016/05/09/new-post-after-4-years/"/>
     <id>http://kaddopur.github.io/blog/2016/05/09/new-post-after-4-years/</id>
     <published>2016-05-09T07:12:16.000Z</published>
-    <updated>2017-05-05T10:06:36.000Z</updated>
+    <updated>2017-05-05T11:27:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近又開始想寫 blog 了，<br>上一次有這個想法是在 4 年前用 octopress 來架靜態網站，<br>不過才寫了兩篇就沒戲了<br>其中一篇還是像這篇一樣的心得文QQ</p>
 <p>希望這次能持續久一點</p>
