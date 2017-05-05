@@ -12,8 +12,8 @@ timezone: Asia/Taipei
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://kaddopur.github.io
-root: /
+url: http://kaddopur.github.io/blog
+root: /blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -75,4 +75,4 @@ archive_generator:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:kaddopur/kaddopur.github.io.git
+  repo: git@github.com:kaddopur/blog.git
