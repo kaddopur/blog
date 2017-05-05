@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[Y2017W18]]></title>
+      <url>/blog/2017/05/06/Y2017W18/</url>
+      <content type="html"><![CDATA[<h2 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h2><ul>
+<li><a href="https://blog.louie.lu/2017/04/30/%E9%96%8B%E7%99%BC%E4%BA%BA%E5%93%A1%E7%9A%84%E9%9D%A2%E8%A9%A6%E6%8C%87%E5%8D%97-a-developers-guide-to-interviewing/" target="_blank" rel="external">開發人員的面試指南 – A developer’s guide to interviewing</a><br>  面試時除了面試官問你問題，你也可以反過來詢問這間公司的工作環境、獲利手段或願景等等。文中列舉你可能會想問的問題，並依詢問對象區分為工程師、管理階層以及 CTO。很適合已有實習經驗或是想換工作的工程師閱讀。</li>
+<li><a href="https://mathiasbynens.github.io/rel-noopener/" target="_blank" rel="external">About rel=noopener</a><br>  網頁中的 <code>&lt;a&gt;</code> 在連至外部網站時，需要帶上 <code>rel=&quot;noopener&quot;</code>，以避免惡意網站利用 <code>window.opener</code> 來改動原始網頁。</li>
+<li><a href="https://softnshare.wordpress.com/2016/02/24/10classprogrammerbooks/" target="_blank" rel="external">每位認真的程式設計師都要讀的10本經典書</a><br>  看過其中三本<blockquote>
+<ol>
+<li>The Pragmatic Programmer<br> (程序員修煉之道︰從小工到專家︰評注版)</li>
+<li>The Mythical Man-month: Essays on Software Engineering 👍<br> (人月神話:軟體專案管理之道)</li>
+<li>Clean Code: A Handbook of Agile Software Craftsmanship<br> (無瑕的程式碼－敏捷軟體開發技巧守則)</li>
+<li>The Clean Coder: A Code of Conduct for Professional Programmers<br> (無瑕的程式碼番外篇－專業程式設計師的生存之道)</li>
+<li>Refactoring: Improving the Design of Existing Code<br> (重構─改善既有程式的設計)</li>
+<li>Working Effectively with Legacy Code<br> (修改代碼的藝術)</li>
+<li>Code Complete: A Practical Handbook of Software Construction<br> (代碼大全 2)</li>
+<li>Head First Design Patterns 👍<br> (深入淺出設計模式)</li>
+<li>Peopleware: Productive Projects and Teams<br> (Peopleware：腦力密集產業的人才管理之道)</li>
+<li>Soft Skills: The software developer’s life manual 👍<br>(軟體技能代碼之外的生存指南)</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul>
+<li><a href="https://developers.google.com/web/tools/lighthouse/" target="_blank" rel="external">Google Lighthouse</a><br>  這個 google extension 是用來檢測網頁在行動裝置上的優化程度，包含是不是 <code>https</code>，有沒有支援離線模式……等等。</li>
+<li><a href="https://github.com/prettier/prettier" target="_blank" rel="external">Prettier - an opinionated JavaScript formatter.</a><br>  是目前 facebook 的專案採用的 js formatter，對各種編緝器的支援也很好，還有 CLI 可以用。 </li>
+</ul>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 週記 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Prettier </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Y2017W17]]></title>
+      <url>/blog/2017/04/29/Y2017W17/</url>
+      <content type="html"><![CDATA[<h2 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h2><ul>
+<li><a href="https://leetcode.com/problems/merge-sorted-array/#/description" target="_blank" rel="external">88. Merge Sorted Array</a></li>
+<li><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/#/description" target="_blank" rel="external">26. Remove Duplicates from Sorted Array</a></li>
+<li><a href="https://leetcode.com/problems/third-maximum-number/#/description" target="_blank" rel="external">414. Third Maximum Number</a></li>
+<li><a href="https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/#/description" target="_blank" rel="external">448. Find All Numbers Disappeared in an Array</a></li>
+<li><a href="https://leetcode.com/problems/k-diff-pairs-in-an-array/#/description" target="_blank" rel="external">532. K-diff Pairs in an Array</a></li>
+<li><a href="https://leetcode.com/problems/array-partition-i/#/description" target="_blank" rel="external">561. Array Partition I</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><ul>
+<li><a href="https://www.amazon.cn/gp/product/B01J9MZPPO" target="_blank" rel="external">软技能 代码之外的生存指南</a> - <em>John Z. Sonmez, 王小刚</em><ul>
+<li>Chapter 17 ~ 71</li>
+</ul>
+</li>
+</ul>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 週記 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Y2017W16]]></title>
+      <url>/blog/2017/04/22/Y2017W16/</url>
+      <content type="html"><![CDATA[<h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><ul>
+<li><a href="https://www.amazon.com/Programming-Phoenix-Productive-Reliable-Fast/dp/1680501453" target="_blank" rel="external">Programming Phoenix: Productive |&gt; Reliable |&gt; Fast</a> - <em>Chris McCord</em><ul>
+<li>Chapter 4 - Ecto and Changesets</li>
+<li>Chapter 5 - Authenticating Users</li>
+</ul>
+</li>
+<li><a href="https://www.amazon.cn/gp/product/B01J9MZPPO" target="_blank" rel="external">软技能 代码之外的生存指南</a> - <em>John Z. Sonmez, 王小刚</em><ul>
+<li>Chapter 1 ~ 16</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+<h2 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h2><ul>
+<li><a href="https://egghead.io/lessons/react-understand-the-difference-between-the-react-router-v4-router-types" target="_blank" rel="external">Understand the Difference Between the React Router v4 Router Types</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 週記 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Elixir </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[四年多來的第一篇]]></title>
+      <url>/blog/2016/05/09/new-post-after-4-years/</url>
+      <content type="html"><![CDATA[<p>最近又開始想寫 blog 了，<br>上一次有這個想法是在 4 年前用 octopress 來架靜態網站，<br>不過才寫了兩篇就沒戲了<br>其中一篇還是像這篇一樣的心得文QQ</p>
+<p>希望這次能持續久一點</p>
+<a id="more"></a>
+]]></content>
+      
+        <categories>
+            
+            <category> 隨筆 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+  
+  
+</search>
