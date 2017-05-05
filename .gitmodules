@@ -1,0 +1,3 @@
+[submodule "themes/bubuzou"]
+	path = themes/bubuzou
+	url = git@github.com:kaddopur/hexo-theme-bubuzou.git
