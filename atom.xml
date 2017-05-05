@@ -4,9 +4,9 @@
   
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://kaddopur.github.io/"/>
+  <link href="http://kaddopur.github.io/blog/"/>
   <updated>2017-05-02T08:25:25.000Z</updated>
-  <id>http://kaddopur.github.io/</id>
+  <id>http://kaddopur.github.io/blog/</id>
   
   <author>
     <name>Jason C. Huang</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Y2017W17</title>
-    <link href="http://kaddopur.github.io/2017/04/29/Y2017W17/"/>
-    <id>http://kaddopur.github.io/2017/04/29/Y2017W17/</id>
+    <link href="http://kaddopur.github.io/blog/2017/04/29/Y2017W17/"/>
+    <id>http://kaddopur.github.io/blog/2017/04/29/Y2017W17/</id>
     <published>2017-04-29T10:04:12.000Z</published>
     <updated>2017-05-02T08:25:25.000Z</updated>
     
@@ -66,15 +66,15 @@
     
     </summary>
     
-      <category term="週記" scheme="http://kaddopur.github.io/categories/%E9%80%B1%E8%A8%98/"/>
+      <category term="週記" scheme="http://kaddopur.github.io/blog/categories/%E9%80%B1%E8%A8%98/"/>
     
     
   </entry>
   
   <entry>
     <title>Y2017W16</title>
-    <link href="http://kaddopur.github.io/2017/04/22/Y2017W16/"/>
-    <id>http://kaddopur.github.io/2017/04/22/Y2017W16/</id>
+    <link href="http://kaddopur.github.io/blog/2017/04/22/Y2017W16/"/>
+    <id>http://kaddopur.github.io/blog/2017/04/22/Y2017W16/</id>
     <published>2017-04-22T10:04:12.000Z</published>
     <updated>2017-05-02T08:19:26.000Z</updated>
     
@@ -122,15 +122,15 @@
     
     </summary>
     
-      <category term="週記" scheme="http://kaddopur.github.io/categories/%E9%80%B1%E8%A8%98/"/>
+      <category term="週記" scheme="http://kaddopur.github.io/blog/categories/%E9%80%B1%E8%A8%98/"/>
     
     
   </entry>
   
   <entry>
     <title>四年多來的第一篇</title>
-    <link href="http://kaddopur.github.io/2016/05/09/new-post-after-4-years/"/>
-    <id>http://kaddopur.github.io/2016/05/09/new-post-after-4-years/</id>
+    <link href="http://kaddopur.github.io/blog/2016/05/09/new-post-after-4-years/"/>
+    <id>http://kaddopur.github.io/blog/2016/05/09/new-post-after-4-years/</id>
     <published>2016-05-09T07:12:16.000Z</published>
     <updated>2017-04-24T04:11:13.000Z</updated>
     
@@ -146,7 +146,7 @@
     
     </summary>
     
-      <category term="隨筆" scheme="http://kaddopur.github.io/categories/%E9%9A%A8%E7%AD%86/"/>
+      <category term="隨筆" scheme="http://kaddopur.github.io/blog/categories/%E9%9A%A8%E7%AD%86/"/>
     
     
   </entry>
