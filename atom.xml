@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/blog/"/>
-  <updated>2017-05-05T11:00:20.000Z</updated>
+  <updated>2017-05-05T16:38:39.000Z</updated>
   <id>http://kaddopur.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Y2017W18</title>
+    <link href="http://kaddopur.github.io/blog/2017/05/06/Y2017W18/"/>
+    <id>http://kaddopur.github.io/blog/2017/05/06/Y2017W18/</id>
+    <published>2017-05-06T04:00:00.000Z</published>
+    <updated>2017-05-05T16:38:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h2><ul>
+<li><a href="https://blog.louie.lu/2017/04/30/%E9%96%8B%E7%99%BC%E4%BA%BA%E5%93%A1%E7%9A%84%E9%9D%A2%E8%A9%A6%E6%8C%87%E5%8D%97-a-developers-guide-to-interviewing/" target="_blank" rel="external">開發人員的面試指南 – A developer’s guide to interviewing</a><br>  面試時除了面試官問你問題，你也可以反過來詢問這間公司的工作環境、獲利手段或願景等等。文中列舉你可能會想問的問題，並依詢問對象區分為工程師、管理階層以及 CTO。很適合已有實習經驗或是想換工作的工程師閱讀。</li>
+<li><a href="https://mathiasbynens.github.io/rel-noopener/" target="_blank" rel="external">About rel=noopener</a><br>  網頁中的 <code>&lt;a&gt;</code> 在連至外部網站時，需要帶上 <code>rel=&quot;noopener&quot;</code>，以避免惡意網站利用 <code>window.opener</code> 來改動原始網頁。</li>
+<li><a href="https://softnshare.wordpress.com/2016/02/24/10classprogrammerbooks/" target="_blank" rel="external">每位認真的程式設計師都要讀的10本經典書</a><br>  看過其中三本<blockquote>
+<ol>
+<li>The Pragmatic Programmer<br> (程序員修煉之道︰從小工到專家︰評注版)</li>
+<li>The Mythical Man-month: Essays on Software Engineering 👍<br> (人月神話:軟體專案管理之道)</li>
+<li>Clean Code: A Handbook of Agile Software Craftsmanship<br> (無瑕的程式碼－敏捷軟體開發技巧守則)</li>
+<li>The Clean Coder: A Code of Conduct for Professional Programmers<br> (無瑕的程式碼番外篇－專業程式設計師的生存之道)</li>
+<li>Refactoring: Improving the Design of Existing Code<br> (重構─改善既有程式的設計)</li>
+<li>Working Effectively with Legacy Code<br> (修改代碼的藝術)</li>
+<li>Code Complete: A Practical Handbook of Software Construction<br> (代碼大全 2)</li>
+<li>Head First Design Patterns 👍<br> (深入淺出設計模式)</li>
+<li>Peopleware: Productive Projects and Teams<br> (Peopleware：腦力密集產業的人才管理之道)</li>
+<li>Soft Skills: The software developer’s life manual 👍<br>(軟體技能代碼之外的生存指南)</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul>
+<li><a href="https://developers.google.com/web/tools/lighthouse/" target="_blank" rel="external">Google Lighthouse</a><br>  這個 google extension 是用來檢測網頁在行動裝置上的優化程度，包含是不是 <code>https</code>，有沒有支援離線模式……等等。</li>
+<li><a href="https://github.com/prettier/prettier" target="_blank" rel="external">Prettier - an opinionated JavaScript formatter.</a><br>  是目前 facebook 的專案採用的 js formatter，對各種編緝器的支援也很好，還有 CLI 可以用。 </li>
+</ul>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Articles&quot;&gt;&lt;a href=&quot;#Articles&quot; class=&quot;headerlink&quot; title=&quot;Articles&quot;&gt;&lt;/a&gt;Articles&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.louie.lu/2017/04/30/%E9%96%8B%E7%99%BC%E4%BA%BA%E5%93%A1%E7%9A%84%E9%9D%A2%E8%A9%A6%E6%8C%87%E5%8D%97-a-developers-guide-to-interviewing/&quot;&gt;開發人員的面試指南 – A developer’s guide to interviewing&lt;/a&gt;&lt;br&gt;  面試時除了面試官問你問題，你也可以反過來詢問這間公司的工作環境、獲利手段或願景等等。文中列舉你可能會想問的問題，並依詢問對象區分為工程師、管理階層以及 CTO。很適合已有實習經驗或是想換工作的工程師閱讀。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mathiasbynens.github.io/rel-noopener/&quot;&gt;About rel=noopener&lt;/a&gt;&lt;br&gt;  網頁中的 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 在連至外部網站時，需要帶上 &lt;code&gt;rel=&amp;quot;noopener&amp;quot;&lt;/code&gt;，以避免惡意網站利用 &lt;code&gt;window.opener&lt;/code&gt; 來改動原始網頁。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://softnshare.wordpress.com/2016/02/24/10classprogrammerbooks/&quot;&gt;每位認真的程式設計師都要讀的10本經典書&lt;/a&gt;&lt;br&gt;  看過其中三本&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;The Pragmatic Programmer&lt;br&gt; (程序員修煉之道︰從小工到專家︰評注版)&lt;/li&gt;
+&lt;li&gt;The Mythical Man-month: Essays on Software Engineering 👍&lt;br&gt; (人月神話:軟體專案管理之道)&lt;/li&gt;
+&lt;li&gt;Clean Code: A Handbook of Agile Software Craftsmanship&lt;br&gt; (無瑕的程式碼－敏捷軟體開發技巧守則)&lt;/li&gt;
+&lt;li&gt;The Clean Coder: A Code of Conduct for Professional Programmers&lt;br&gt; (無瑕的程式碼番外篇－專業程式設計師的生存之道)&lt;/li&gt;
+&lt;li&gt;Refactoring: Improving the Design of Existing Code&lt;br&gt; (重構─改善既有程式的設計)&lt;/li&gt;
+&lt;li&gt;Working Effectively with Legacy Code&lt;br&gt; (修改代碼的藝術)&lt;/li&gt;
+&lt;li&gt;Code Complete: A Practical Handbook of Software Construction&lt;br&gt; (代碼大全 2)&lt;/li&gt;
+&lt;li&gt;Head First Design Patterns 👍&lt;br&gt; (深入淺出設計模式)&lt;/li&gt;
+&lt;li&gt;Peopleware: Productive Projects and Teams&lt;br&gt; (Peopleware：腦力密集產業的人才管理之道)&lt;/li&gt;
+&lt;li&gt;Soft Skills: The software developer’s life manual 👍&lt;br&gt;(軟體技能代碼之外的生存指南)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="週記" scheme="http://kaddopur.github.io/blog/categories/%E9%80%B1%E8%A8%98/"/>
+    
+    
+      <category term="Prettier" scheme="http://kaddopur.github.io/blog/tags/Prettier/"/>
+    
+      <category term="JavaScript" scheme="http://kaddopur.github.io/blog/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Y2017W17</title>
