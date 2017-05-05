@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>蝌蚪伯的摳頂筆記</title>
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/"/>
   <updated>2017-05-02T08:25:25.000Z</updated>
