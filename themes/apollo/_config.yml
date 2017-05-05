@@ -1,12 +1,12 @@
 menu:
     Blog: /blog/
-    Archive: /archives/
+    Archive: /blog/archives/
     Twitter: https://twitter.com/kaddopur
     GitHub: https://github.com/kaddopur
-    Rss: /atom.xml
+    Rss: /blog/atom.xml
 
-favicon: /favicon.png
-logo: /favicon.png
+favicon: /blog/favicon.png
+logo: /blog/favicon.png
 
 # Comment
 # e.g disqus: seansun
