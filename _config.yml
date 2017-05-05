@@ -78,5 +78,5 @@ deploy:
   repo: git@github.com:kaddopur/blog.git
 
 search:
-  path: /blog/search.xml
+  path: /search.xml
   field: post
