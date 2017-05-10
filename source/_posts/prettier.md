@@ -16,6 +16,7 @@ date: 2017-05-10 17:41:00
 
 `prettier` 從今年一月的第一個 commit 開始到現在快半年，不過到它真正引起我的興趣，是從上週 (5/3) 釋出的 `v1.3.0` 開始。至於這個版本有什麼特別的功能嗎？非也。主要是因為這個版本有公開它在 Facebook 內部各專案使用 `prettier` 的情形。
 
+<!-- more -->
 > The first projects to adopt prettier were Jest, React and immutable-js. Those are small codebases in the order of hundreds of files that have their own infrastructure. There are a handful of people working on them full time.<br />
 > Then, Oculus and Nuclide converted their codebase over. The scale is bigger with a few thousands of files and tens of full time contributors but looks pretty similar to the first projects. The conversions went in one big codemod and that's it.
 
