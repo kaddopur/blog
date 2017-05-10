@@ -103,7 +103,7 @@ $ yarn add lint-staged husky --dev
 
 `prettier` 對大部分的編輯器都有對應的工具，這邊以我的編輯器 VS Code 為例。
 
-去 MartketPlace 下載 [Prettier - JavaScript formatter][vscode_ext]。安裝完成後，可以用 `CMD + Shift + P` 來重新排版整個檔案，或是用 `CMD + Shift + P` 重排所選擇的區域。
+去 MartketPlace 下載 [Prettier - JavaScript formatter][vscode_ext]。安裝完成後，可以用 `CMD + Shift + P` 來重新排版整個檔案，或是用 `CMD + Shift + P` 重排所選擇的區域。
 
 想要調整 `prettier` 所使用的排版選項，可以在 `User Settings` 來全局更改所想要的 `prettier` 參數，或是也可以用 `Workspace Settings` 來按照不同專案設定不同選項。
 
