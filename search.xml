@@ -35,7 +35,7 @@
 <p><code>husky</code> 會讓專案在 git commit 時執行 “precommit” 這個命令。而在 <code>lint-staged</code> 中，會檢查所有被 stage 的檔案，如果有符合特定檔名，就會再運行指定的命令。</p>
 <p>在上面的例子中，我們會在 git commit 之前，對所有被 stage 的 JavaScript 檔案運行 <code>prettier</code> 後，再重新 stage 更新後的檔案，以確保所有進入 repo 的代碼的樣式正確。</p>
 <h3 id="Editor"><a href="#Editor" class="headerlink" title="Editor"></a>Editor</h3><p><code>prettier</code> 對大部分的編輯器都有對應的工具，這邊以我的編輯器 VS Code 為例。</p>
-<p>去 MartketPlace 下載 <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="external">Prettier - JavaScript formatter</a>。安裝完成後，可以用 <code>CMD + Shift + P</code> 來重新排版整個檔案，或是用 <code>CMD + Shift + P</code> 重排所選擇的區域。</p>
+<p>去 MartketPlace 下載 <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="external">Prettier - JavaScript formatter</a>。安裝完成後，可以用 <code>CMD + Shift + P</code> 來重新排版整個檔案，或是用 <code>CMD + Shift + P</code> 重排所選擇的區域。</p>
 <p>想要調整 <code>prettier</code> 所使用的排版選項，可以在 <code>User Settings</code> 來全局更改所想要的 <code>prettier</code> 參數，或是也可以用 <code>Workspace Settings</code> 來按照不同專案設定不同選項。</p>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>在專案中，可以無痛導入工作流程而不用特別針對樣式錯誤去手動調整是 <code>prettier</code> 的一大優勢，可以讓 coding style 一次到位，也沒有撰寫代碼時多餘的打字或心理成本。</p>
 <p>對於已經導入 <code>eslint</code> 並有團隊自訂 rule set 的專案，<code>prettier</code> 雖可以用參數調整所產出的代碼，但可以調整的地方有限，所產出的代碼也不一定會完全相符於之前的 rule set，這時必定要與團隊成員有良好溝通再行導入，畢竟<strong>“團隊的樣式就是最好的樣式”</strong>。</p>
