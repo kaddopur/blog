@@ -441,7 +441,7 @@ header .nav-list-item .active {
 .post-content h3 {
     font-size: 18px;
     border-bottom: solid 1px;
-    margin: 4em 0 1em;
+    margin: 2em 0 1em;
 }
 .post-content h4 {
     font-size: 16px
@@ -547,7 +547,7 @@ code,pre {
 
 .highlight {
     position: relative;
-    margin: 0 0 3em;
+    margin: 1em 0;
     border-radius: 2px;
     line-height: 1.1em;
     background-color: #f8f8f8;

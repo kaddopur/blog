@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/blog/"/>
-  <updated>2017-05-05T16:55:28.000Z</updated>
+  <updated>2017-05-10T09:47:13.000Z</updated>
   <id>http://kaddopur.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,72 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用 prettier 自動調整 JavaScript 樣式</title>
+    <link href="http://kaddopur.github.io/blog/2017/05/10/prettier/"/>
+    <id>http://kaddopur.github.io/blog/2017/05/10/prettier/</id>
+    <published>2017-05-10T09:41:00.000Z</published>
+    <updated>2017-05-10T09:47:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>prettier</code> 是一款 JavaScript 的樣式處理工具，它類似 golang 的 <code>gofmt</code> 可以自動排版你的程式。除了 Vanilla JS 之外，尚支援了 ES6, jsx, Flow 以及正在開發中的 TypeScript。它是由 <a href="https://twitter.com/vjeux" target="_blank" rel="external">vjeux (Christopher Chedeau)</a>  開發，在 <a href="https://github.com/prettier/prettier" target="_blank" rel="external">github</a> 上面約有 10,000 個 stars。</p>
+<p><code>prettier</code> 從今年一月的第一個 commit 開始到現在快半年，不過到它真正引起我的興趣，是從上週 (5/3) 釋出的 <code>v1.3.0</code> 開始。至於這個版本有什麼特別的功能嗎？非也。主要是因為這個版本有公開它在 Facebook 內部各專案使用 <code>prettier</code> 的情形。</p>
+<blockquote>
+<p>The first projects to adopt prettier were Jest, React and immutable-js. Those are small codebases in the order of hundreds of files that have their own infrastructure. There are a handful of people working on them full time.<br><br>Then, Oculus and Nuclide converted their codebase over. The scale is bigger with a few thousands of files and tens of full time contributors but looks pretty similar to the first projects. The conversions went in one big codemod and that’s it.</p>
+</blockquote>
+<p>可以看到 Facebook 的專案一個接一個開始用 <code>prettier</code> 來規範及管理他們的 JavaScript 樣式，而 <code>prettier</code> 和我們平常在用的 <code>eslint</code> 或是其他的 lint 工具相比之下孰優孰劣呢？</p>
+<h2 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h2><ol>
+<li><p><strong>一致性 Consistency</strong><br>同一種表達式對於不同的人可能會有不同的寫法，使用 <code>prettier</code> 可以輕易保持代碼中樣式的一致式，避免個人習慣樣式的不同。</p>
+</li>
+<li><p><strong>可教性 Teachability</strong><br>經過 <code>prettier</code> 調整格式之後，你可以知道 JavaScript 引擎是怎麼解析你所寫的代碼，進而幫助你養成良好的撰寫習慣來避免一些語意上的錯誤。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> x = value1 &amp;&amp; value2 || value3 &amp;&amp; value4;</div></pre></td></tr></table></figure>
+<p>會幫你加上括號</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> x = (value1 &amp;&amp; value2) || (value3 &amp;&amp; value4);</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>自由度 Freedom</strong><br>只需要專心在寫代碼這件事就好了，不用刻意去手動調整樣式。在抽函數的時候也蠻有用的。</p>
+</li>
+</ol>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p><code>prettier</code> 提供了 CLI 方便你轉換檔案。你也可以將 <code>prettier</code> 設定在專案的工作流程中，在 commit 時自動排版並簽入至你的 repo。或是你也可以將 <code>prettier</code> 與你最愛的編輯器綁定，讓你在存檔時可以自動排版並看到結果。以下會分別介紹。</p>
+<p>可以局部安裝到你的專案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add prettier --dev</div></pre></td></tr></table></figure></p>
+<p>或是全局安裝<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn global add prettier</div></pre></td></tr></table></figure></p>
+<h3 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h3><p>使用方式如下，可以選擇想要轉換的檔案。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ prettier [opts] [filename ...]</div></pre></td></tr></table></figure></p>
+<p>實際上使用的情形可能會像這樣<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ prettier --single-quote --write &quot;&#123;app,__&#123;tests,mocks&#125;__&#125;/**/*.js&quot;</div></pre></td></tr></table></figure></p>
+<p>想要知道有什麼參數可以下，可以輸入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ prettier</div><div class="line">Usage: prettier [opts] [filename ...]</div><div class="line"></div><div class="line">Available options:</div><div class="line">  --write                  Edit the file in-place. (Beware!)</div><div class="line">  --list-different or -l   Print filenames of files that are different from Prettier formatting.</div><div class="line">  --stdin                  Read input from stdin.</div><div class="line">  --print-width &lt;int&gt;      Specify the length of line th</div><div class="line">  ...</div></pre></td></tr></table></figure></p>
+<p>會列出所有可以用的選項</p>
+<h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h3><p>將 <code>husky</code> 和 <code>lint-staged</code> 加到專案的 devDependencies<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add lint-staged husky --dev</div></pre></td></tr></table></figure></p>
+<p>在 <code>package.json</code> 中填加以下 config<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"precommit"</span>: <span class="string">"lint-staged"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"lint-staged"</span>: &#123;</div><div class="line">    <span class="attr">"*.js"</span>: [</div><div class="line">      <span class="string">"prettier --write"</span>,</div><div class="line">      <span class="string">"git add"</span></div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>husky</code> 會讓專案在 git commit 時執行 “precommit” 這個命令。而在 <code>lint-staged</code> 中，會檢查所有被 stage 的檔案，如果有符合特定檔名，就會再運行指定的命令。</p>
+<p>在上面的例子中，我們會在 git commit 之前，對所有被 stage 的 JavaScript 檔案運行 <code>prettier</code> 後，再重新 stage 更新後的檔案，以確保所有進入 repo 的代碼的樣式正確。</p>
+<h3 id="Editor"><a href="#Editor" class="headerlink" title="Editor"></a>Editor</h3><p><code>prettier</code> 對大部分的編輯器都有對應的工具，這邊以我的編輯器 VS Code 為例。</p>
+<p>去 MartketPlace 下載 [Prettier - JavaScript formatter]<a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="external">vscode_ext</a>。安裝完成後，可以用 <code>CMD + Shift + P</code> 來重新排版整個檔案，或是用 <code>CMD + Shift + P</code> 重排所選擇的區域。</p>
+<p>想要調整 <code>prettier</code> 所使用的排版選項，可以在 <code>User Settings</code> 來全局更改所想要的 <code>prettier</code> 參數，或是也可以用 <code>Workspace Settings</code> 來按照不同專案設定不同選項。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>在專案中，可以無痛導入工作流程而不用特別針對樣式錯誤去手動調整是 <code>prettier</code> 的一大優勢，可以讓 coding style 一次到位，也沒有撰寫代碼時多餘的打字或心理成本。</p>
+<p>對於已經導入 <code>eslint</code> 並有團隊自訂 rule set 的專案，<code>prettier</code> 雖可以用參數調整所產出的代碼，但可以調整的地方有限，所產出的代碼也不一定會完全相符於之前的 rule set，這時必定要與團隊成員有良好溝通再行導入，畢竟<strong>“團隊的樣式就是最好的樣式”</strong>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;code&gt;prettier&lt;/code&gt; 是一款 JavaScript 的樣式處理工具，它類似 golang 的 &lt;code&gt;gofmt&lt;
+    
+    </summary>
+    
+      <category term="新知" scheme="http://kaddopur.github.io/blog/categories/%E6%96%B0%E7%9F%A5/"/>
+    
+    
+      <category term="prettier" scheme="http://kaddopur.github.io/blog/tags/prettier/"/>
+    
+      <category term="JavaScript" scheme="http://kaddopur.github.io/blog/tags/JavaScript/"/>
+    
+      <category term="Facebook" scheme="http://kaddopur.github.io/blog/tags/Facebook/"/>
+    
+      <category term="tool" scheme="http://kaddopur.github.io/blog/tags/tool/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Y2017W18</title>
     <link href="http://kaddopur.github.io/blog/2017/05/06/Y2017W18/"/>
     <id>http://kaddopur.github.io/blog/2017/05/06/Y2017W18/</id>
     <published>2017-05-06T04:00:00.000Z</published>
-    <updated>2017-05-05T16:55:28.000Z</updated>
+    <updated>2017-05-10T09:47:13.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h2><ul>
 <li><a href="https://blog.louie.lu/2017/04/30/%E9%96%8B%E7%99%BC%E4%BA%BA%E5%93%A1%E7%9A%84%E9%9D%A2%E8%A9%A6%E6%8C%87%E5%8D%97-a-developers-guide-to-interviewing/" target="_blank" rel="external">開發人員的面試指南 – A developer’s guide to interviewing</a><br>  面試時除了面試官問你問題，你也可以反過來詢問這間公司的工作環境、獲利手段或願景等等。文中列舉你可能會想問的問題，並依詢問對象區分為工程師、管理階層以及 CTO。很適合已有實習經驗或是想換工作的工程師閱讀。</li>
@@ -55,9 +116,9 @@
     <summary type="html">
     
       &lt;h2 id=&quot;Articles&quot;&gt;&lt;a href=&quot;#Articles&quot; class=&quot;headerlink&quot; title=&quot;Articles&quot;&gt;&lt;/a&gt;Articles&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.louie.lu/2017/04/30/%E9%96%8B%E7%99%BC%E4%BA%BA%E5%93%A1%E7%9A%84%E9%9D%A2%E8%A9%A6%E6%8C%87%E5%8D%97-a-developers-guide-to-interviewing/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;開發人員的面試指南 – A developer’s guide to interviewing&lt;/a&gt;&lt;br&gt;  面試時除了面試官問你問題，你也可以反過來詢問這間公司的工作環境、獲利手段或願景等等。文中列舉你可能會想問的問題，並依詢問對象區分為工程師、管理階層以及 CTO。很適合已有實習經驗或是想換工作的工程師閱讀。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://mathiasbynens.github.io/rel-noopener/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;About rel=noopener&lt;/a&gt;&lt;br&gt;  網頁中的 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 在連至外部網站時，需要帶上 &lt;code&gt;rel=&amp;quot;noopener&amp;quot;&lt;/code&gt;，以避免惡意網站利用 &lt;code&gt;window.opener&lt;/code&gt; 來改動原始網頁。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://softnshare.wordpress.com/2016/02/24/10classprogrammerbooks/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每位認真的程式設計師都要讀的10本經典書&lt;/a&gt;&lt;br&gt;  看過其中三本&lt;blockquote&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.louie.lu/2017/04/30/%E9%96%8B%E7%99%BC%E4%BA%BA%E5%93%A1%E7%9A%84%E9%9D%A2%E8%A9%A6%E6%8C%87%E5%8D%97-a-developers-guide-to-interviewing/&quot;&gt;開發人員的面試指南 – A developer’s guide to interviewing&lt;/a&gt;&lt;br&gt;  面試時除了面試官問你問題，你也可以反過來詢問這間公司的工作環境、獲利手段或願景等等。文中列舉你可能會想問的問題，並依詢問對象區分為工程師、管理階層以及 CTO。很適合已有實習經驗或是想換工作的工程師閱讀。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mathiasbynens.github.io/rel-noopener/&quot;&gt;About rel=noopener&lt;/a&gt;&lt;br&gt;  網頁中的 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 在連至外部網站時，需要帶上 &lt;code&gt;rel=&amp;quot;noopener&amp;quot;&lt;/code&gt;，以避免惡意網站利用 &lt;code&gt;window.opener&lt;/code&gt; 來改動原始網頁。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://softnshare.wordpress.com/2016/02/24/10classprogrammerbooks/&quot;&gt;每位認真的程式設計師都要讀的10本經典書&lt;/a&gt;&lt;br&gt;  看過其中三本&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;The Pragmatic Programmer&lt;br&gt; (程序員修煉之道︰從小工到專家︰評注版)&lt;/li&gt;
 &lt;li&gt;The Mythical Man-month: Essays on Software Engineering 👍&lt;br&gt; (人月神話:軟體專案管理之道)&lt;/li&gt;
@@ -79,7 +140,7 @@
       <category term="週記" scheme="http://kaddopur.github.io/blog/categories/%E9%80%B1%E8%A8%98/"/>
     
     
-      <category term="Prettier" scheme="http://kaddopur.github.io/blog/tags/Prettier/"/>
+      <category term="prettier" scheme="http://kaddopur.github.io/blog/tags/prettier/"/>
     
       <category term="JavaScript" scheme="http://kaddopur.github.io/blog/tags/JavaScript/"/>
     
@@ -116,12 +177,12 @@
     <summary type="html">
     
       &lt;h2 id=&quot;Leetcode&quot;&gt;&lt;a href=&quot;#Leetcode&quot; class=&quot;headerlink&quot; title=&quot;Leetcode&quot;&gt;&lt;/a&gt;Leetcode&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/merge-sorted-array/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;88. Merge Sorted Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-array/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;26. Remove Duplicates from Sorted Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/third-maximum-number/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;414. Third Maximum Number&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;448. Find All Numbers Disappeared in an Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/k-diff-pairs-in-an-array/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;532. K-diff Pairs in an Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/array-partition-i/#/description&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;561. Array Partition I&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/merge-sorted-array/#/description&quot;&gt;88. Merge Sorted Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-array/#/description&quot;&gt;26. Remove Duplicates from Sorted Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/third-maximum-number/#/description&quot;&gt;414. Third Maximum Number&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/#/description&quot;&gt;448. Find All Numbers Disappeared in an Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/k-diff-pairs-in-an-array/#/description&quot;&gt;532. K-diff Pairs in an Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/array-partition-i/#/description&quot;&gt;561. Array Partition I&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -162,12 +223,12 @@
     <summary type="html">
     
       &lt;h2 id=&quot;Books&quot;&gt;&lt;a href=&quot;#Books&quot; class=&quot;headerlink&quot; title=&quot;Books&quot;&gt;&lt;/a&gt;Books&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Programming-Phoenix-Productive-Reliable-Fast/dp/1680501453&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Programming Phoenix: Productive |&amp;gt; Reliable |&amp;gt; Fast&lt;/a&gt; - &lt;em&gt;Chris McCord&lt;/em&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Programming-Phoenix-Productive-Reliable-Fast/dp/1680501453&quot;&gt;Programming Phoenix: Productive |&amp;gt; Reliable |&amp;gt; Fast&lt;/a&gt; - &lt;em&gt;Chris McCord&lt;/em&gt;&lt;ul&gt;
 &lt;li&gt;Chapter 4 - Ecto and Changesets&lt;/li&gt;
 &lt;li&gt;Chapter 5 - Authenticating Users&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.amazon.cn/gp/product/B01J9MZPPO&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;软技能 代码之外的生存指南&lt;/a&gt; - &lt;em&gt;John Z. Sonmez, 王小刚&lt;/em&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.cn/gp/product/B01J9MZPPO&quot;&gt;软技能 代码之外的生存指南&lt;/a&gt; - &lt;em&gt;John Z. Sonmez, 王小刚&lt;/em&gt;&lt;ul&gt;
 &lt;li&gt;Chapter 1 ~ 16&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
