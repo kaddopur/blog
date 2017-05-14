@@ -3,6 +3,38 @@
   
     
     <entry>
+      <title><![CDATA[Y2017W19]]></title>
+      <url>/blog/2017/05/13/Y2017W19/</url>
+      <content type="html"><![CDATA[<h2 id="Blog-posts"><a href="#Blog-posts" class="headerlink" title="Blog posts"></a>Blog posts</h2><ul>
+<li><a href="https://kaddopur.github.io/blog/2017/05/10/prettier/">使用 prettier 自動調整 JavaScript 樣式</a></li>
+</ul>
+<h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><ul>
+<li><a href="http://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="external">图说设计模式</a><ul>
+<li>看懂UML类图和时序图</li>
+<li>创建型模式<ol>
+<li>简单工厂模式( Simple Factory Pattern )</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 週記 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用 prettier 自動調整 JavaScript 樣式]]></title>
       <url>/blog/2017/05/10/prettier/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>prettier</code> 是一款 JavaScript 的樣式處理工具，它類似 golang 的 <code>gofmt</code> 可以自動排版你的程式。除了 Vanilla JS 之外，尚支援了 ES6, jsx, Flow 以及正在開發中的 TypeScript。它是由 <a href="https://twitter.com/vjeux" target="_blank" rel="external">vjeux (Christopher Chedeau)</a>  開發，在 <a href="https://github.com/prettier/prettier" target="_blank" rel="external">github</a> 上面約有 10,000 個 stars。</p>
@@ -50,9 +82,9 @@
         
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> prettier </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Facebook </tag>
             
@@ -104,9 +136,9 @@
         
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> prettier </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
         
