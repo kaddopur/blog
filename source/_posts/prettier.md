@@ -5,7 +5,7 @@ tags:
   - prettier
   - Facebook
   - tool
-categories: 新知
+categories: 筆記
 date: 2017-05-10 17:41:00
 ---
 
