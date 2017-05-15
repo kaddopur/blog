@@ -3,6 +3,64 @@
   
     
     <entry>
+      <title><![CDATA[git submodule 教學]]></title>
+      <url>/blog/2017/05/15/git-submodule/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Submodules (子模組) 其實是個很常見的概念，在專案中想要引入其他專案的代碼，亦或是第三方的函式庫，被引入的庫就可以被看為是一個子模組。</p>
+<p>在 Node.js 的專案中，子模組是由 <a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="external">yarn</a> / <a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a> 來幫我們管理其中的依賴。其他的語言也有相對應的套件管理系統，像是 Ruby 有 <a href="https://rubygems.org/?locale=zh-TW" target="_blank" rel="external">RubyGems</a>，Elixir 有 <a href="https://hex.pm/" target="_blank" rel="external">hex</a> ……等，這些套件管理系統可以利用 <a href="http://semver.org/lang/zh-TW/" target="_blank" rel="external">semver</a> 格式的版本號來拉取想要的子模組版本。</p>
+<p>但如果想引入的專案並沒有放在套件管理系統中，或是這個語言根本沒有對應的套件管理系統的時候，要想管理子模組就開始會變得有點麻煩。我們需要有一個比較好的方式來靈活管理我們的子模組。</p>
+<a id="more"></a>
+<p><code>git submodule</code> 指令剛好可以在這邊派上用場，它可以用來管理巢狀的 git 專案。你可以在專案中引用其他的專案，並以該專案的提交 Hash 當做所依賴的版本號 (有點像是用 git 當做你的套件管理系統XD )，但使用的步驟稍微有點複雜，下面會說明。</p>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="新增子模組"><a href="#新增子模組" class="headerlink" title="新增子模組"></a>新增子模組</h3><p>想要把一個專案當做是子模組加到你想要的路徑之下，可以用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git submodule add &lt;repository&gt; [&lt;path&gt;]</div></pre></td></tr></table></figure></p>
+<p>舉個實際的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git submodule add https://github.com/kaddopur/hexo-theme-bubuzou.git themes/bubuzou</div></pre></td></tr></table></figure></p>
+<p>意思就是把 <code>hexo-theme-bubuzou</code> 這個專案加到 <code>theme/bubuzou</code> 這個路徑之下。你會發現有三個檔案被改動/新增了，其中兩個你可以看得到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># .gitmodules</div><div class="line">[submodule &quot;themes/bubuzou&quot;]</div><div class="line">	path = themes/bubuzou</div><div class="line">	url = git@github.com:kaddopur/hexo-theme-bubuzou.git</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># themes/bubuzou</div><div class="line">Subproject commit 51c576971e7f8f3693bd16ea21075e45758e7432</div></pre></td></tr></table></figure>
+<p>一個是 git 幫我們產生的 <code>.gitmodules</code> 設定檔，其中包含了儲存庫與路徑的對應關係。而另一個是 <code>themes/bubuzou</code>，由外層的 git 來看，它是一個子模組當前所使用的提交 Hash。而另一個看不到的改動是在 <code>.git/config</code> 當中，當你要刪除子模組時要記得去清掉。</p>
+<p>我們可以將變動存為另一個提交，如此一來即完成了子模組的新增。</p>
+<h3 id="提交子模組更新"><a href="#提交子模組更新" class="headerlink" title="提交子模組更新"></a>提交子模組更新</h3><p>子模組有更動需要提交，請依照步驟如下</p>
+<ol>
+<li>提交子模組更動</li>
+<li>上傳到子模組的遠端儲存庫 </li>
+<li>提交上層專案更動</li>
+<li>上傳到上層專案的遠端儲存庫 </li>
+</ol>
+<p>如果專案沒有放在遠端，則 2, 4 步可省略。若有的話，千萬記得一定要將子模組的提交上傳到遠端，不然就等著收共事者的信吧XD。 </p>
+<h3 id="移除子模組"><a href="#移除子模組" class="headerlink" title="移除子模組"></a>移除子模組</h3><p>要移除子模組有點麻煩，一共 7 個步驟 (<a href="https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial#Removal" target="_blank" rel="external">參考</a>)</p>
+<ol>
+<li>刪掉 <code>.git/config</code> 中相關的段落</li>
+<li>刪掉 <code>.gitmodules</code> 中相關的段落</li>
+<li>暫存  <code>.gitmodules</code> 的更動</li>
+<li>用 <code>git rm --cached</code> 停止追蹤子模組</li>
+<li>刪掉 <code>.git/modules/&lt;submodule&gt;</code></li>
+<li>提交更新</li>
+<li>真正把子模組刪除</li>
+</ol>
+<p>實際的指令如下，每步一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git submodule deinit themes/bubuzou</div><div class="line">$ vi .gitmodules</div><div class="line">$ git add .gitmodules</div><div class="line">$ git rm --cached themes/bubuzou  # 後面不帶 &apos;/&apos;</div><div class="line">$ rm -rf .git/modules/themes/bubuzou</div><div class="line">$ git commit -m &apos;remove bubuzou&apos;</div><div class="line">$ rm -rf themes/bubuzou</div></pre></td></tr></table></figure></p>
+<h3 id="複製包含子模組的專案"><a href="#複製包含子模組的專案" class="headerlink" title="複製包含子模組的專案"></a>複製包含子模組的專案</h3><p>直接 <code>git clone</code> 上層專案，你會發現子模組的資料夾存在但卻是空的。此時你要先運行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git submodule init</div></pre></td></tr></table></figure></p>
+<p>這個指令會將你在 <code>.gitmodules</code> 中的子模組設定寫入 <code>.git/config</code> 中，接下來再運行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git submodule update</div></pre></td></tr></table></figure>
+<p>這個時候子模組才會真正被下載下來</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>如果你的專案常常被其他專案引用，這時就是你拆分專案成為一個子模組的好時機。但如果你是寫 Node.js 或是 Ruby，請儘量使用該語言的套件管理系統來公布你的專案以方便日後引用。真的沒有辦法了，再用 <code>git submodule</code>，因為它真的有點麻煩。</p>
+<h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><p>這次會寫 <code>git submodule</code> 的文章是因為這個部落格用了一個新主題 <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank" rel="external">bubuzou</a>，而我想要對這個主題做一些修改並加入版本控制，所以我先 fork 這個主題後，將其以<a href="https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E7%B5%84-Submodules" target="_blank" rel="external">子模組</a>的方式加入我的部落格中。而文內所提到的一些指令，主要是設定部落格主題時實際用到的，我想將之記錄下來以便日後查詢，或是有人要問的時候可以少費一些唇舌直接貼這篇。在此特別感謝強者我同事<a href="https://tom76kimo.github.io/blog/" target="_blank" rel="external">湯姆餡</a>熱心教學。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 筆記 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> CLI </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Y2017W19]]></title>
       <url>/blog/2017/05/13/Y2017W19/</url>
       <content type="html"><![CDATA[<h2 id="Blog-posts"><a href="#Blog-posts" class="headerlink" title="Blog posts"></a>Blog posts</h2><ul>
@@ -75,7 +133,7 @@
       
         <categories>
             
-            <category> 新知 </category>
+            <category> 筆記 </category>
             
         </categories>
         
