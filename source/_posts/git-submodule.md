@@ -55,8 +55,8 @@ Subproject commit 51c576971e7f8f3693bd16ea21075e45758e7432
 
 要移除子模組有點麻煩，一共 6 個步驟
 
-1. 刪掉 `.gitmodules` 中相關的段落
-2. 刪掉 `.git/config` 中相關的段落
+1. 刪掉 `.git/config` 中相關的段落
+2. 刪掉 `.gitmodules` 中相關的段落
 3. 刪掉 `.git/modules/<submodule>` 
 4. 用 `git rm --cached` 刪掉子模組，並停止 tracking 子模組
 5. 提交更新
@@ -64,7 +64,7 @@ Subproject commit 51c576971e7f8f3693bd16ea21075e45758e7432
 
 實際的指令可能像是
 ```
-
+```
 
 
 
