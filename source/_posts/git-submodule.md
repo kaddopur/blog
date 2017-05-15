@@ -53,7 +53,30 @@ Subproject commit 51c576971e7f8f3693bd16ea21075e45758e7432
 
 ### 移除子模組
 
-> 怎麼乾淨地移除子模組？如何提交變動
+要移除子模組有點麻煩，一共 6 個步驟
+
+1. 刪掉 `.gitmodules` 中相關的段落
+2. 刪掉 `.git/config` 中相關的段落
+3. 刪掉 `.git/modules/<submodule>` 
+4. 用 `git rm --cached` 刪掉子模組，並停止 tracking 子模組
+5. 提交更新
+6. 真正把子模組刪除
+
+實際的指令可能像是
+```
+
+
+
+
+Delete the relevant section from the .gitmodules file.
+Stage the .gitmodules changes git add .gitmodules
+Delete the relevant section from .git/config.
+Run git rm --cached path_to_submodule (no trailing slash).
+Run rm -rf .git/modules/path_to_submodule
+Commit git commit -m "Removed submodule <name>"
+Delete the now untracked submodule files
+rm -rf path_to_submodule
+
 
 ### 複製包含子模組的專案
 直接 `git clone` 上層專案，你會發現子模組的資料夾存在但卻是空的。此時你要先運行
