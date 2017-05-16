@@ -14,7 +14,7 @@
 <p>舉個實際的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git submodule add https://github.com/kaddopur/hexo-theme-bubuzou.git themes/bubuzou</div></pre></td></tr></table></figure></p>
 <p>意思就是把 <code>hexo-theme-bubuzou</code> 這個專案加到 <code>theme/bubuzou</code> 這個路徑之下。你會發現有三個檔案被改動/新增了，其中兩個你可以看得到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># .gitmodules</div><div class="line">[submodule &quot;themes/bubuzou&quot;]</div><div class="line">	path = themes/bubuzou</div><div class="line">	url = git@github.com:kaddopur/hexo-theme-bubuzou.git</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># themes/bubuzou</div><div class="line">Subproject commit 51c576971e7f8f3693bd16ea21075e45758e7432</div></pre></td></tr></table></figure>
-<p>一個是 git 幫我們產生的 <code>.gitmodules</code> 設定檔，其中包含了儲存庫與路徑的對應關係。而另一個是 <code>themes/bubuzou</code>，由外層的 git 來看，它是一個子模組當前所使用的提交 Hash。至於那個看不到的改動是在 <code>.git/config</code> 當中，當你要刪除子模組時要記得去清掉。</p>
+<p>一個是 git 幫我們產生的 <code>.gitmodules</code> 設定檔，其中包含了儲存庫與路徑的對應關係。而另一個是 <code>themes/bubuzou</code>，由外層的 git 來看，它是一個子模組當前所使用的提交 Hash。至於那個看不到的改動是在 <code>.git/config</code> 當中，當你要刪除子模組時要記得去清掉。</p>
 <p>我們可以將變動存為另一個提交，如此一來即完成了子模組的新增。</p>
 <h3 id="提交子模組更新"><a href="#提交子模組更新" class="headerlink" title="提交子模組更新"></a>提交子模組更新</h3><p>子模組有更動需要提交，請依照步驟如下</p>
 <ol>
