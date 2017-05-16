@@ -36,14 +36,14 @@ $ git submodule add https://github.com/kaddopur/hexo-theme-bubuzou.git themes/bu
 ```
 # .gitmodules
 [submodule "themes/bubuzou"]
-	path = themes/bubuzou
-	url = git@github.com:kaddopur/hexo-theme-bubuzou.git
+    path = themes/bubuzou
+    url = git@github.com:kaddopur/hexo-theme-bubuzou.git
 ```
 ```
 # themes/bubuzou
 Subproject commit 51c576971e7f8f3693bd16ea21075e45758e7432
 ```
-一個是 git 幫我們產生的 `.gitmodules` 設定檔，其中包含了儲存庫與路徑的對應關係。而另一個是 `themes/bubuzou`，由外層的 git 來看，它是一個子模組當前所使用的提交 Hash。至於那個看不到的改動是在 `.git/config` 當中，當你要刪除子模組時要記得去清掉。
+一個是 git 幫我們產生的 `.gitmodules` 設定檔，其中包含了儲存庫與路徑的對應關係。而另一個是 `themes/bubuzou`，由外層的 git 來看，它是一個子模組當前所使用的提交 Hash。至於那個看不到的改動是在 `.git/config` 當中，當你要刪除子模組時要記得去清掉。
 
 我們可以將變動存為另一個提交，如此一來即完成了子模組的新增。
 
