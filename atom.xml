@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/blog/"/>
-  <updated>2017-05-16T10:08:48.000Z</updated>
+  <updated>2017-05-21T16:59:15.000Z</updated>
   <id>http://kaddopur.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用 React 開發具有完整 CI/CD 流程的 Chrome Extension</title>
+    <link href="http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/"/>
+    <id>http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</id>
+    <published>2017-05-21T15:32:00.000Z</published>
+    <updated>2017-05-21T16:59:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>身為一個前端工程師，在工作上遇到一些需要反覆操作的流程時，總會想要用一些方法來優化它。像我自己也在公司開發了一些 <a href="https://kaddopur.github.io/projects">CLI 及 Chrome Extension</a> 來加速日常的開發。然而在開發了這些工具的同時，我卻也不經意的為自己引入了新的<em>反覆操作</em>，如果可以把測試、過版、壓檔、上傳、發佈……等步驟全部自動化，我就可以更專注的在新功能上的開發上。</p>
+<p>底下將以開發一個新的 Chrome Extension 為例，利用 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 及 <a href="https://developer.chrome.com/webstore/using_webstore_api" target="_blank" rel="external">Chrome Web Store Publish API</a> 做到完整的 CI/CD 整合。</p>
+<h2 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ node -v</div><div class="line">v6.3.1</div><div class="line">$ yarn -v</div><div class="line">yarn install v0.24.5</div></pre></td></tr></table></figure>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><blockquote>
+<ol>
+<li>建一個新的 React 專案</li>
+<li>Chrome Extension 設定</li>
+<li>基本 CI 設定</li>
+<li>自動化打包及發布 CD 設定</li>
+<li>發布 Chrome Extension</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<h3 id="建一個新的-React-專案"><a href="#建一個新的-React-專案" class="headerlink" title="建一個新的 React 專案"></a>建一個新的 React 專案</h3><p>這個步驟很簡單，只有一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn create react-app &lt;EXTENSION_NAME&gt;</div></pre></td></tr></table></figure></p>
+<p>本篇教學所用的<code>EXTENSION_NAME</code>是<code>my-ext</code>，所以我用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn create react-app my-ext</div></pre></td></tr></table></figure></p>
+<p>它會幫你開一個新的 React 專案<code>my-ext</code>。</p>
+<h3 id="Chrome-Extension-設定"><a href="#Chrome-Extension-設定" class="headerlink" title="Chrome Extension 設定"></a>Chrome Extension 設定</h3><p>這個新的 React 專案現在還不是一個合法的 Chrome Extension，我們需要補上正確的設定。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// public/manifest.json</div><div class="line">&#123;</div><div class="line">  "short_name": "React App",</div><div class="line">  "name": "Create React App Sample",</div><div class="line">  "icons": [</div><div class="line">    &#123;</div><div class="line">      "src": "favicon.ico",</div><div class="line">      "sizes": "192x192",</div><div class="line">      "type": "image/png"</div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  "start_url": "./index.html",</div><div class="line">  "display": "standalone",</div><div class="line">  "theme_color": "#000000",</div><div class="line">  "background_color": "#ffffff"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>目前的<code>manifest.json</code>是 PWA 的設定，而不是我們所想要的 Chrome Extension 設定，所以將其改寫為</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// public/manifest.json</div><div class="line">&#123;</div><div class="line">  "manifest_version": 2,</div><div class="line">  "name": "my-ext",</div><div class="line">  "description": "...",</div><div class="line">  "version": "0.1.0",</div><div class="line">  "browser_action": &#123;</div><div class="line">    "default_popup": "index.html"</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>再來，<code>manifest.json</code>中的 version 應該要與<code>package.json</code>中的 version 互相對應。為了不要每次過版都要手動改兩邊的版本，我用<code>version-everything</code>來幫我處理版號問題</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add -D version-everything</div></pre></td></tr></table></figure>
+<p>首先安裝它，再更改<code>package.json</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// package.json</div><div class="line">&#123;</div><div class="line">  ...</div><div class="line">  "scripts" : &#123;</div><div class="line">    ...</div><div class="line">    "version": "version-everything &amp;&amp; git add -u"</div><div class="line">  &#125;,</div><div class="line">  "version_files": [</div><div class="line">    "public/manifest.json"</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如此一來，我們在用<code>yarn version</code>的指令跳版號時，會觸發 version 這個 hook 以達到版號同步的效果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn build</div></pre></td></tr></table></figure>
+<p>接下來我們在 Chrome 上看看<code>my-ext</code>能不能正確地被載入。<code>yarn build</code>這個指令在打包時會把在<code>./public</code>底下的檔案也一併複製到<code>./build</code>底下，如此一來，我們即可以在 chrome 中用<a href="https://developer.chrome.com/extensions/getstarted#unpacked" target="_blank" rel="external">載入未封裝擴充功能</a>，裝載<code>./build</code></p>
+<p>載入後可以看到瀏覽器右上角出現一個按鈕，按下去之後會彈現一個視窗如下圖<br><img src="http://i.imgur.com/viruNna.png" alt="http://i.imgur.com/viruNna.png"></p>
+<p>恭喜，我們的 Chrome Extension 看起來設定對了。</p>
+<h3 id="基本-CI-設定"><a href="#基本-CI-設定" class="headerlink" title="基本 CI 設定"></a>基本 CI 設定</h3><p>這步驟主要是設定好 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 的串接，首先我們必須要 push 我們的專案到 <a href="https://github.com/kaddopur/my-ext" target="_blank" rel="external">github repo</a>，再來在 Travis 中打開此 repo 的開關 (在這裡是 kaddopur/my-ext)，最後設置<code>.travis.yml</code>如下<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># .travis.yml</span></div><div class="line"><span class="attr">language:</span> <span class="string">node_js</span></div><div class="line"><span class="attr">node_js:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">"6"</span></div><div class="line"><span class="attr">cache:</span> <span class="string">yarn</span></div></pre></td></tr></table></figure></p>
+<p>這邊我們用的是 <code>node@6</code>，再來我們也打開了 yarn caching。將<code>.travis.yml</code> commit 之後 push 到 github，你會看到 Travis 開始跑起來了。</p>
+<h3 id="自動化打包及發布-CD-設定"><a href="#自動化打包及發布-CD-設定" class="headerlink" title="自動化打包及發布 CD 設定"></a>自動化打包及發布 CD 設定</h3><p>我們將會利用 Travis 的 <code>after_success</code> hook 來自動觸發上傳及發布，但在上傳之前，我們需要準備好 Extension 的 zip 檔。在<code>yarn build</code>之後，我用<code>adm-zip</code>來幫我產生壓縮檔</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add -D adm-zip</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// scripts/zip.js</span></div><div class="line"><span class="keyword">const</span> AdmZip = <span class="built_in">require</span>(<span class="string">'adm-zip'</span>);</div><div class="line"><span class="keyword">const</span> zip = <span class="keyword">new</span> AdmZip();</div><div class="line">zip.addLocalFolder(<span class="string">`<span class="subst">$&#123;process.cwd()&#125;</span>/build`</span>);</div><div class="line">zip.writeZip(<span class="string">`<span class="subst">$&#123;process.cwd()&#125;</span>/bundle.zip`</span>);</div></pre></td></tr></table></figure>
+<p>它會把<code>/build</code>資料夾壓成<code>bundle.zip</code></p>
+<p>再來我會使用<code>webstore-upload</code>來上傳壓縮檔與發布</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add -D webstore-upload</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// scripts/upload.js</span></div><div class="line"><span class="keyword">const</span> webstore_upload = <span class="built_in">require</span>(<span class="string">'webstore-upload'</span>);</div><div class="line"><span class="keyword">const</span> uploadOptions = &#123;</div><div class="line">    <span class="attr">accounts</span>: &#123;</div><div class="line">        <span class="attr">default</span>: &#123;</div><div class="line">            <span class="attr">publish</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">client_id</span>: process.env.CLIENT_ID,</div><div class="line">            <span class="attr">client_secret</span>: process.env.CLIENT_SECRET,</div><div class="line">            <span class="attr">refresh_token</span>: process.env.REFRESH_TOKEN</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">extensions</span>: &#123;</div><div class="line">        <span class="attr">my_ext</span>: &#123;</div><div class="line">            <span class="attr">appID</span>: process.env.APP_ID,</div><div class="line">            <span class="attr">zip</span>: <span class="string">`<span class="subst">$&#123;process.cwd()&#125;</span>/bundle.zip`</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">uploadExtensions</span>: [<span class="string">'my_ext'</span>]</div><div class="line">&#125;;</div><div class="line"></div><div class="line">webstore_upload(uploadOptions, <span class="string">'default'</span>)</div><div class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(result);</div><div class="line">        <span class="comment">// do somethings nice</span></div><div class="line">        <span class="keyword">return</span> <span class="string">'yay'</span>;</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.error(err);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+<p>我們要提供<code>client_id</code>,<code>client_script</code>,<code>refresh_token</code>及 Extension 的<code>appID</code>方可使用。特別提醒一下，我把這些值設為 Travis 的環境變數並在執行時取得，而非 commit 在程式碼中。</p>
+<p>這些值怎麼取得的</p>
+<ul>
+<li>前三項怎麼產生請看這 <a href="https://github.com/DrewML/chrome-webstore-upload/blob/master/How%20to%20generate%20Google%20API%20keys.md" target="_blank" rel="external">How to generate Google API keys</a></li>
+<li><code>appID</code>請先手動上傳你的 Extension 一次後，在<a href="https://chrome.google.com/webstore/developer/dashboard?hl=zh-TW" target="_blank" rel="external">開發人員資訊主頁</a>的右邊每個 Extension 的<strong>更多資訊</strong>中，可以找到<strong>商品ID</strong>即為你的<code>appID</code>。</li>
+</ul>
+<p>最後，我們把<code>after_success</code> hook 設定好<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// package.json</div><div class="line">&#123;</div><div class="line">  ...</div><div class="line">  "scripts": &#123;</div><div class="line">    ...</div><div class="line">    "zip": "node scripts/zip.js",</div><div class="line">    "upload": "node scripts/upload.js"</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># .travis.yml</span></div><div class="line"><span class="attr">after_success:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">yarn</span> <span class="string">build</span></div><div class="line"><span class="bullet">  -</span> <span class="string">yarn</span> <span class="string">zip</span></div><div class="line"><span class="bullet">  -</span> <span class="string">yarn</span> <span class="string">upload</span></div></pre></td></tr></table></figure>
+<p>就大功告成啦！</p>
+<h3 id="發布-Chrome-Extension"><a href="#發布-Chrome-Extension" class="headerlink" title="發布 Chrome Extension"></a>發布 Chrome Extension</h3><p>只要 repo 上的 master branch 有新的 commit，Travis 都會幫我們跑 CI/CD 流程。需要特別注意的是，Chrome Web Store 無法上傳和同版本的 Extension，所以 merge 時請記得跳個版。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ yarn version</div><div class="line">yarn version v0.24.5</div><div class="line">info Current version: 0.1.0</div><div class="line">question New version: 0.1.1 // 輸入你的新版號</div><div class="line">info New version: 0.1.1</div><div class="line">$ version-everything &amp;&amp; git add -u // 更新 manifest.json 中的 version</div><div class="line">Loading package.json</div><div class="line">Current version is &quot;0.1.1&quot;</div><div class="line">Updated public/manifest.json from 0.1.0 to 0.1.1</div><div class="line">✨  Done in 5.21s.</div></pre></td></tr></table></figure>
+<p>直接<code>git push</code>或是你要先發 PR 再 merge 也行。之後在你的<a href="https://chrome.google.com/webstore/developer/dashboard?hl=zh-TW" target="_blank" rel="external">開發人員資訊主頁</a>就可以看到版本更新了！</p>
+<h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><p>程式碼放在 <a href="https://github.com/kaddopur/my-ext" target="_blank" rel="external">https://github.com/kaddopur/my-ext</a> ，如果過程中有任何問題或討論也歡迎在底下留言。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;身為一個前端工程師，在工作上遇到一些需要反覆操作的流程時，總會想要用一些方法來優化它。像我自己也在公司開發了一些 &lt;a href=&quot;https://kaddopur.github.io/projects&quot;&gt;CLI 及 Chrome Extension&lt;/a&gt; 來加速日常的開發。然而在開發了這些工具的同時，我卻也不經意的為自己引入了新的&lt;em&gt;反覆操作&lt;/em&gt;，如果可以把測試、過版、壓檔、上傳、發佈……等步驟全部自動化，我就可以更專注的在新功能上的開發上。&lt;/p&gt;
+&lt;p&gt;底下將以開發一個新的 Chrome Extension 為例，利用 &lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt; 及 &lt;a href=&quot;https://developer.chrome.com/webstore/using_webstore_api&quot;&gt;Chrome Web Store Publish API&lt;/a&gt; 做到完整的 CI/CD 整合。&lt;/p&gt;
+&lt;h2 id=&quot;開發環境&quot;&gt;&lt;a href=&quot;#開發環境&quot; class=&quot;headerlink&quot; title=&quot;開發環境&quot;&gt;&lt;/a&gt;開發環境&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ node -v&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;v6.3.1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ yarn -v&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yarn install v0.24.5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;流程&quot;&gt;&lt;a href=&quot;#流程&quot; class=&quot;headerlink&quot; title=&quot;流程&quot;&gt;&lt;/a&gt;流程&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;建一個新的 React 專案&lt;/li&gt;
+&lt;li&gt;Chrome Extension 設定&lt;/li&gt;
+&lt;li&gt;基本 CI 設定&lt;/li&gt;
+&lt;li&gt;自動化打包及發布 CD 設定&lt;/li&gt;
+&lt;li&gt;發布 Chrome Extension&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Chrome Extension" scheme="http://kaddopur.github.io/blog/tags/Chrome-Extension/"/>
+    
+      <category term="React" scheme="http://kaddopur.github.io/blog/tags/React/"/>
+    
+      <category term="CI/CD" scheme="http://kaddopur.github.io/blog/tags/CI-CD/"/>
+    
+      <category term="travis" scheme="http://kaddopur.github.io/blog/tags/travis/"/>
+    
+  </entry>
   
   <entry>
     <title>git submodule 教學</title>
@@ -362,7 +450,7 @@
     <link href="http://kaddopur.github.io/blog/2016/05/09/new-post-after-4-years/"/>
     <id>http://kaddopur.github.io/blog/2016/05/09/new-post-after-4-years/</id>
     <published>2016-05-09T07:12:16.000Z</published>
-    <updated>2017-05-05T11:27:18.000Z</updated>
+    <updated>2017-05-21T14:30:52.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近又開始想寫 blog 了，<br>上一次有這個想法是在 4 年前用 octopress 來架靜態網站，<br>不過才寫了兩篇就沒戲了<br>其中一篇還是像這篇一樣的心得文QQ</p>
 <p>希望這次能持續久一點</p>
