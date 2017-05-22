@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/blog/"/>
-  <updated>2017-05-21T16:59:15.000Z</updated>
+  <updated>2017-05-22T05:31:46.000Z</updated>
   <id>http://kaddopur.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/"/>
     <id>http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</id>
     <published>2017-05-21T15:32:00.000Z</published>
-    <updated>2017-05-21T16:59:15.000Z</updated>
+    <updated>2017-05-22T05:31:46.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>身為一個前端工程師，在工作上遇到一些需要反覆操作的流程時，總會想要用一些方法來優化它。像我自己也在公司開發了一些 <a href="https://kaddopur.github.io/projects">CLI 及 Chrome Extension</a> 來加速日常的開發。然而在開發了這些工具的同時，我卻也不經意的為自己引入了新的<em>反覆操作</em>，如果可以把測試、過版、壓檔、上傳、發佈……等步驟全部自動化，我就可以更專注的在新功能上的開發上。</p>
 <p>底下將以開發一個新的 Chrome Extension 為例，利用 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 及 <a href="https://developer.chrome.com/webstore/using_webstore_api" target="_blank" rel="external">Chrome Web Store Publish API</a> 做到完整的 CI/CD 整合。</p>
@@ -92,14 +92,60 @@
     
     </summary>
     
+      <category term="筆記" scheme="http://kaddopur.github.io/blog/categories/%E7%AD%86%E8%A8%98/"/>
     
-      <category term="Chrome Extension" scheme="http://kaddopur.github.io/blog/tags/Chrome-Extension/"/>
     
       <category term="React" scheme="http://kaddopur.github.io/blog/tags/React/"/>
     
+      <category term="travis" scheme="http://kaddopur.github.io/blog/tags/travis/"/>
+    
       <category term="CI/CD" scheme="http://kaddopur.github.io/blog/tags/CI-CD/"/>
     
-      <category term="travis" scheme="http://kaddopur.github.io/blog/tags/travis/"/>
+      <category term="Chrome Extension" scheme="http://kaddopur.github.io/blog/tags/Chrome-Extension/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Y2017W20</title>
+    <link href="http://kaddopur.github.io/blog/2017/05/20/Y2017W20/"/>
+    <id>http://kaddopur.github.io/blog/2017/05/20/Y2017W20/</id>
+    <published>2017-05-20T04:00:00.000Z</published>
+    <updated>2017-05-22T05:36:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本週寫了一篇教學文，感覺過程中收穫不少。也許以後可以把想要深究的主題當做是下次連載的文章內容，強迫自己<em>「教學相長」</em>wwww。</p>
+<h2 id="Blog-posts"><a href="#Blog-posts" class="headerlink" title="Blog posts"></a>Blog posts</h2><ul>
+<li><a href="https://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/">用 React 開發具有完整 CI/CD 流程的 Chrome Extension</a><br>  寫了一篇 travis &amp; web store publish api 教學，其實用了蠻多時間在實驗 auth 及驗証上傳有沒有成功。有在寫 chrome extension 的同學可以試試看。</li>
+</ul>
+<h2 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h2><ul>
+<li><a href="https://developers.google.com/web/fundamentals/" target="_blank" rel="external">Web Fundamentals</a><br>  主要是有一些關於前端<em>架構</em>，<em>效能</em>及<em>設計</em>方面的文章，內容很多，可以中午配鈑吃。</li>
+</ul>
+<h2 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h2><ul>
+<li><a href="https://www.codeschool.com/courses/try-docker" target="_blank" rel="external">Try Docker by Code School</a><br>  免費在線暢玩 docker</li>
+</ul>
+<a id="more"></a>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本週寫了一篇教學文，感覺過程中收穫不少。也許以後可以把想要深究的主題當做是下次連載的文章內容，強迫自己&lt;em&gt;「教學相長」&lt;/em&gt;wwww。&lt;/p&gt;
+&lt;h2 id=&quot;Blog-posts&quot;&gt;&lt;a href=&quot;#Blog-posts&quot; class=&quot;headerlink&quot; title=&quot;Blog posts&quot;&gt;&lt;/a&gt;Blog posts&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/&quot;&gt;用 React 開發具有完整 CI/CD 流程的 Chrome Extension&lt;/a&gt;&lt;br&gt;  寫了一篇 travis &amp;amp; web store publish api 教學，其實用了蠻多時間在實驗 auth 及驗証上傳有沒有成功。有在寫 chrome extension 的同學可以試試看。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Articles&quot;&gt;&lt;a href=&quot;#Articles&quot; class=&quot;headerlink&quot; title=&quot;Articles&quot;&gt;&lt;/a&gt;Articles&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/&quot;&gt;Web Fundamentals&lt;/a&gt;&lt;br&gt;  主要是有一些關於前端&lt;em&gt;架構&lt;/em&gt;，&lt;em&gt;效能&lt;/em&gt;及&lt;em&gt;設計&lt;/em&gt;方面的文章，內容很多，可以中午配鈑吃。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Tutorials&quot;&gt;&lt;a href=&quot;#Tutorials&quot; class=&quot;headerlink&quot; title=&quot;Tutorials&quot;&gt;&lt;/a&gt;Tutorials&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.codeschool.com/courses/try-docker&quot;&gt;Try Docker by Code School&lt;/a&gt;&lt;br&gt;  免費在線暢玩 docker&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="週記" scheme="http://kaddopur.github.io/blog/categories/%E9%80%B1%E8%A8%98/"/>
+    
     
   </entry>
   

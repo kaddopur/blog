@@ -58,18 +58,53 @@
 <h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><p>程式碼放在 <a href="https://github.com/kaddopur/my-ext" target="_blank" rel="external">https://github.com/kaddopur/my-ext</a> ，如果過程中有任何問題或討論也歡迎在底下留言。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 筆記 </category>
+            
+        </categories>
+        
         
         <tags>
             
-            <tag> Chrome Extension </tag>
-            
             <tag> React </tag>
-            
-            <tag> CI/CD </tag>
             
             <tag> travis </tag>
             
+            <tag> CI/CD </tag>
+            
+            <tag> Chrome Extension </tag>
+            
         </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Y2017W20]]></title>
+      <url>/blog/2017/05/20/Y2017W20/</url>
+      <content type="html"><![CDATA[<p>本週寫了一篇教學文，感覺過程中收穫不少。也許以後可以把想要深究的主題當做是下次連載的文章內容，強迫自己<em>「教學相長」</em>wwww。</p>
+<h2 id="Blog-posts"><a href="#Blog-posts" class="headerlink" title="Blog posts"></a>Blog posts</h2><ul>
+<li><a href="https://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/">用 React 開發具有完整 CI/CD 流程的 Chrome Extension</a><br>  寫了一篇 travis &amp; web store publish api 教學，其實用了蠻多時間在實驗 auth 及驗証上傳有沒有成功。有在寫 chrome extension 的同學可以試試看。</li>
+</ul>
+<h2 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h2><ul>
+<li><a href="https://developers.google.com/web/fundamentals/" target="_blank" rel="external">Web Fundamentals</a><br>  主要是有一些關於前端<em>架構</em>，<em>效能</em>及<em>設計</em>方面的文章，內容很多，可以中午配鈑吃。</li>
+</ul>
+<h2 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h2><ul>
+<li><a href="https://www.codeschool.com/courses/try-docker" target="_blank" rel="external">Try Docker by Code School</a><br>  免費在線暢玩 docker</li>
+</ul>
+<a id="more"></a>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 週記 </category>
+            
+        </categories>
+        
         
     </entry>
     
