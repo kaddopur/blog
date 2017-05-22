@@ -1,6 +1,7 @@
 ---
 title: 用 React 開發具有完整 CI/CD 流程的 Chrome Extension
 date: 2017-05-21 23:32
+categories: 筆記
 tags:
   - Chrome Extension
   - React
