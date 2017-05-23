@@ -60,12 +60,14 @@
       
         <categories>
             
-            <category> 筆記 </category>
+            <category> 教學 </category>
             
         </categories>
         
         
         <tags>
+            
+            <tag> JavaScript </tag>
             
             <tag> React </tag>
             
@@ -151,7 +153,7 @@
       
         <categories>
             
-            <category> 筆記 </category>
+            <category> 教學 </category>
             
         </categories>
         

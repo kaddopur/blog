@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</loc>
+    
+    <lastmod>2017-05-23T02:19:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://kaddopur.github.io/blog/2017/05/15/git-submodule/</loc>
+    
+    <lastmod>2017-05-23T02:19:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://kaddopur.github.io/blog/2017/05/20/Y2017W20/</loc>
     
     <lastmod>2017-05-22T05:36:13.000Z</lastmod>
@@ -9,23 +23,9 @@
   </url>
   
   <url>
-    <loc>http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</loc>
-    
-    <lastmod>2017-05-22T05:31:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://kaddopur.github.io/blog/2016/05/09/new-post-after-4-years/</loc>
     
     <lastmod>2017-05-21T14:30:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://kaddopur.github.io/blog/2017/05/15/git-submodule/</loc>
-    
-    <lastmod>2017-05-16T10:08:48.000Z</lastmod>
     
   </url>
   

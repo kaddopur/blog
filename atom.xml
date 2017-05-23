@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/blog/"/>
-  <updated>2017-05-22T05:31:46.000Z</updated>
+  <updated>2017-05-23T02:19:54.000Z</updated>
   <id>http://kaddopur.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/"/>
     <id>http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</id>
     <published>2017-05-21T15:32:00.000Z</published>
-    <updated>2017-05-22T05:31:46.000Z</updated>
+    <updated>2017-05-23T02:19:54.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>身為一個前端工程師，在工作上遇到一些需要反覆操作的流程時，總會想要用一些方法來優化它。像我自己也在公司開發了一些 <a href="https://kaddopur.github.io/projects">CLI 及 Chrome Extension</a> 來加速日常的開發。然而在開發了這些工具的同時，我卻也不經意的為自己引入了新的<em>反覆操作</em>，如果可以把測試、過版、壓檔、上傳、發佈……等步驟全部自動化，我就可以更專注的在新功能上的開發上。</p>
 <p>底下將以開發一個新的 Chrome Extension 為例，利用 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 及 <a href="https://developer.chrome.com/webstore/using_webstore_api" target="_blank" rel="external">Chrome Web Store Publish API</a> 做到完整的 CI/CD 整合。</p>
@@ -92,8 +92,10 @@
     
     </summary>
     
-      <category term="筆記" scheme="http://kaddopur.github.io/blog/categories/%E7%AD%86%E8%A8%98/"/>
+      <category term="教學" scheme="http://kaddopur.github.io/blog/categories/%E6%95%99%E5%AD%B8/"/>
     
+    
+      <category term="JavaScript" scheme="http://kaddopur.github.io/blog/tags/JavaScript/"/>
     
       <category term="React" scheme="http://kaddopur.github.io/blog/tags/React/"/>
     
@@ -154,7 +156,7 @@
     <link href="http://kaddopur.github.io/blog/2017/05/15/git-submodule/"/>
     <id>http://kaddopur.github.io/blog/2017/05/15/git-submodule/</id>
     <published>2017-05-15T07:13:00.000Z</published>
-    <updated>2017-05-16T10:08:48.000Z</updated>
+    <updated>2017-05-23T02:19:36.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Submodules (子模組) 其實是個很常見的概念，在專案中想要引入其他專案的代碼，亦或是第三方的函式庫，被引入的庫就可以被看為是一個子模組。</p>
 <p>在 Node.js 的專案中，子模組是由 <a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="external">yarn</a> / <a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a> 來幫我們管理其中的依賴。其他的語言也有相對應的套件管理系統，像是 Ruby 有 <a href="https://rubygems.org/?locale=zh-TW" target="_blank" rel="external">RubyGems</a>，Elixir 有 <a href="https://hex.pm/" target="_blank" rel="external">hex</a> ……等，這些套件管理系統可以利用 <a href="http://semver.org/lang/zh-TW/" target="_blank" rel="external">semver</a> 格式的版本號來拉取想要的子模組版本。</p>
@@ -202,7 +204,7 @@
     
     </summary>
     
-      <category term="筆記" scheme="http://kaddopur.github.io/blog/categories/%E7%AD%86%E8%A8%98/"/>
+      <category term="教學" scheme="http://kaddopur.github.io/blog/categories/%E6%95%99%E5%AD%B8/"/>
     
     
       <category term="git" scheme="http://kaddopur.github.io/blog/tags/git/"/>
