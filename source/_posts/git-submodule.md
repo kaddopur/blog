@@ -1,6 +1,6 @@
 ---
 title: git submodule 教學
-categories: 筆記
+categories: 教學
 date: 2017-05-15 15:13:00
 tags: [git, CLI]
 ---
