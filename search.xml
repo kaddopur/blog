@@ -5,7 +5,8 @@
     <entry>
       <title><![CDATA[用 React 開發具有完整 CI/CD 流程的 Chrome Extension]]></title>
       <url>/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</url>
-      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>身為一個前端工程師，在工作上遇到一些需要反覆操作的流程時，總會想要用一些方法來優化它。像我自己也在公司開發了一些 <a href="https://kaddopur.github.io/projects">CLI 及 Chrome Extension</a> 來加速日常的開發。然而在開發了這些工具的同時，我卻也不經意的為自己引入了新的<em>反覆操作</em>，如果可以把測試、過版、壓檔、上傳、發佈……等步驟全部自動化，我就可以更專注的在新功能上的開發上。</p>
+      <content type="html"><![CDATA[<p><img src="https://source.unsplash.com/ObweQkF5w30/700x393" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>身為一個前端工程師，在工作上遇到一些需要反覆操作的流程時，總會想要用一些方法來優化它。像我自己也在公司開發了一些 <a href="https://kaddopur.github.io/projects">CLI 及 Chrome Extension</a> 來加速日常的開發。然而在開發了這些工具的同時，我卻也不經意的為自己引入了新的<em>反覆操作</em>，如果可以把測試、過版、壓檔、上傳、發佈……等步驟全部自動化，我就可以更專注的在新功能上的開發上。</p>
 <p>底下將以開發一個新的 Chrome Extension 為例，利用 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 及 <a href="https://developer.chrome.com/webstore/using_webstore_api" target="_blank" rel="external">Chrome Web Store Publish API</a> 做到完整的 CI/CD 整合。</p>
 <h2 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ node -v</div><div class="line">v6.3.1</div><div class="line">$ yarn -v</div><div class="line">yarn install v0.24.5</div></pre></td></tr></table></figure>
 <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><blockquote>
