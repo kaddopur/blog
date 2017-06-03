@@ -143,18 +143,23 @@ cache: yarn
 
 ### 自動化打包及發布 CD 設定
 
-我們將會利用 Travis 的 `after_success` hook 來自動觸發上傳及發布，但在上傳之前，我們需要準備好 Extension 的 zip 檔。在`yarn build`之後，我用`adm-zip`來幫我產生壓縮檔
+我們將會利用 Travis 的 `after_success` hook 來自動觸發上傳及發布，但在上傳之前，我們需要準備好 Extension 的 zip 檔。在`yarn build`之後，我用`zip-folder`來幫我產生壓縮檔
 
 ```
-$ yarn add -D adm-zip
+$ yarn add -D zip-folder
 ```
 
 ```js
 // scripts/zip.js
-const AdmZip = require('adm-zip');
-const zip = new AdmZip();
-zip.addLocalFolder(`${process.cwd()}/build`);
-zip.writeZip(`${process.cwd()}/bundle.zip`);
+const zipFolder = require('zip-folder');
+
+zipFolder(`${process.cwd()}/build`, `${process.cwd()}/bundle.zip`, err => {
+  if (err) {
+    console.log('oh no!', err);
+  } else {
+    console.log('EXCELLENT');
+  }
+});
 ```
 
 它會把`/build`資料夾壓成`bundle.zip`
@@ -251,3 +256,6 @@ Updated public/manifest.json from 0.1.0 to 0.1.1
 
 ## 後記
 程式碼放在 https://github.com/kaddopur/my-ext ，如果過程中有任何問題或討論也歡迎在底下留言。
+
+## 修訂
+2017-06-03 - 改用`zip-folder`產生壓縮檔
