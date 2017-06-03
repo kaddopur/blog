@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/blog/"/>
-  <updated>2017-05-24T09:44:26.000Z</updated>
+  <updated>2017-06-03T08:48:24.000Z</updated>
   <id>http://kaddopur.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/"/>
     <id>http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</id>
     <published>2017-05-21T15:32:00.000Z</published>
-    <updated>2017-05-24T09:44:26.000Z</updated>
+    <updated>2017-06-03T08:48:24.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://source.unsplash.com/ObweQkF5w30/700x393" alt=""></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>身為一個前端工程師，在工作上遇到一些需要反覆操作的流程時，總會想要用一些方法來優化它。像我自己也在公司開發了一些 <a href="https://kaddopur.github.io/projects">CLI 及 Chrome Extension</a> 來加速日常的開發。然而在開發了這些工具的同時，我卻也不經意的為自己引入了新的<em>反覆操作</em>，如果可以把測試、過版、壓檔、上傳、發佈……等步驟全部自動化，我就可以更專注的在新功能上的開發上。</p>
@@ -54,9 +54,9 @@
 <p>恭喜，我們的 Chrome Extension 看起來設定對了。</p>
 <h3 id="基本-CI-設定"><a href="#基本-CI-設定" class="headerlink" title="基本 CI 設定"></a>基本 CI 設定</h3><p>這步驟主要是設定好 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 的串接，首先我們必須要 push 我們的專案到 <a href="https://github.com/kaddopur/my-ext" target="_blank" rel="external">github repo</a>，再來在 Travis 中打開此 repo 的開關 (在這裡是 kaddopur/my-ext)，最後設置<code>.travis.yml</code>如下<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># .travis.yml</span></div><div class="line"><span class="attr">language:</span> <span class="string">node_js</span></div><div class="line"><span class="attr">node_js:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">"6"</span></div><div class="line"><span class="attr">cache:</span> <span class="string">yarn</span></div></pre></td></tr></table></figure></p>
 <p>這邊我們用的是 <code>node@6</code>，再來我們也打開了 yarn caching。將<code>.travis.yml</code> commit 之後 push 到 github，你會看到 Travis 開始跑起來了。</p>
-<h3 id="自動化打包及發布-CD-設定"><a href="#自動化打包及發布-CD-設定" class="headerlink" title="自動化打包及發布 CD 設定"></a>自動化打包及發布 CD 設定</h3><p>我們將會利用 Travis 的 <code>after_success</code> hook 來自動觸發上傳及發布，但在上傳之前，我們需要準備好 Extension 的 zip 檔。在<code>yarn build</code>之後，我用<code>adm-zip</code>來幫我產生壓縮檔</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add -D adm-zip</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// scripts/zip.js</span></div><div class="line"><span class="keyword">const</span> AdmZip = <span class="built_in">require</span>(<span class="string">'adm-zip'</span>);</div><div class="line"><span class="keyword">const</span> zip = <span class="keyword">new</span> AdmZip();</div><div class="line">zip.addLocalFolder(<span class="string">`<span class="subst">$&#123;process.cwd()&#125;</span>/build`</span>);</div><div class="line">zip.writeZip(<span class="string">`<span class="subst">$&#123;process.cwd()&#125;</span>/bundle.zip`</span>);</div></pre></td></tr></table></figure>
+<h3 id="自動化打包及發布-CD-設定"><a href="#自動化打包及發布-CD-設定" class="headerlink" title="自動化打包及發布 CD 設定"></a>自動化打包及發布 CD 設定</h3><p>我們將會利用 Travis 的 <code>after_success</code> hook 來自動觸發上傳及發布，但在上傳之前，我們需要準備好 Extension 的 zip 檔。在<code>yarn build</code>之後，我用<code>zip-folder</code>來幫我產生壓縮檔</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add -D zip-folder</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// scripts/zip.js</span></div><div class="line"><span class="keyword">const</span> zipFolder = <span class="built_in">require</span>(<span class="string">'zip-folder'</span>);</div><div class="line"></div><div class="line">zipFolder(<span class="string">`<span class="subst">$&#123;process.cwd()&#125;</span>/build`</span>, <span class="string">`<span class="subst">$&#123;process.cwd()&#125;</span>/bundle.zip`</span>, err =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'oh no!'</span>, err);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'EXCELLENT'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>它會把<code>/build</code>資料夾壓成<code>bundle.zip</code></p>
 <p>再來我會使用<code>webstore-upload</code>來上傳壓縮檔與發布</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add -D webstore-upload</div></pre></td></tr></table></figure>
@@ -74,6 +74,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ yarn version</div><div class="line">yarn version v0.24.5</div><div class="line">info Current version: 0.1.0</div><div class="line">question New version: 0.1.1 // 輸入你的新版號</div><div class="line">info New version: 0.1.1</div><div class="line">$ version-everything &amp;&amp; git add -u // 更新 manifest.json 中的 version</div><div class="line">Loading package.json</div><div class="line">Current version is &quot;0.1.1&quot;</div><div class="line">Updated public/manifest.json from 0.1.0 to 0.1.1</div><div class="line">✨  Done in 5.21s.</div></pre></td></tr></table></figure>
 <p>直接<code>git push</code>或是你要先發 PR 再 merge 也行。之後在你的<a href="https://chrome.google.com/webstore/developer/dashboard?hl=zh-TW" target="_blank" rel="external">開發人員資訊主頁</a>就可以看到版本更新了！</p>
 <h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><p>程式碼放在 <a href="https://github.com/kaddopur/my-ext" target="_blank" rel="external">https://github.com/kaddopur/my-ext</a> ，如果過程中有任何問題或討論也歡迎在底下留言。</p>
+<h2 id="修訂"><a href="#修訂" class="headerlink" title="修訂"></a>修訂</h2><p>2017-06-03 - 改用<code>zip-folder</code>產生壓縮檔</p>
 ]]></content>
     
     <summary type="html">
