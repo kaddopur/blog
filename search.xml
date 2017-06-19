@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title><![CDATA[Y2017W21]]></title>
+      <url>/blog/2017/05/27/Y2017W21/</url>
+      <content type="html"><![CDATA[<h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><ul>
+<li><a href="https://www.gitbook.com/book/pityonline/tmux-productive-mouse-free-development_zh/details" target="_blank" rel="external">《tmux: Productive Mouse-Free Development》中文翻译</a></li>
+</ul>
+<h2 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h2><ul>
+<li><a href="https://doc.webpack-china.org/concepts/" target="_blank" rel="external">webpack文檔 - 概念</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 週記 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[用 React 開發具有完整 CI/CD 流程的 Chrome Extension]]></title>
       <url>/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</url>
       <content type="html"><![CDATA[<p><img src="https://source.unsplash.com/ObweQkF5w30/700x393" alt=""></p>

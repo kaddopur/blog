@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://kaddopur.github.io/blog/2017/05/27/Y2017W21/</loc>
+    
+    <lastmod>2017-06-19T06:23:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</loc>
     
     <lastmod>2017-06-03T08:48:24.000Z</lastmod>
