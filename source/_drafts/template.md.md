@@ -1,0 +1,56 @@
+---
+title: Y2017W21
+categories: 週記
+date: 2017-06-24 12:00:00
+tags: [Webpack]
+---
+
+## Tutorials
+- [Webpack 2: The Complete Developer's Guide][webpack2] - *Stephen Grider*
+	- Section 1 ~ Section 9
+
+	結果買了這個課程之後 Webpack@3 就出了😱
+
+[webpack2]: https://www.udemy.com/webpack-2-the-complete-developers-guide/learn/v4/overview
+
+## Books
+- [ECMAScript 6 入门][es6] - *阮一峰*
+	- 前言
+	- ECMAScript 6简介
+	- let 和 const 命令
+	- 变量的解构赋值
+	- 字符串的扩展
+
+
+[es6]: http://es6.ruanyifeng.com/
+
+## Leetcode
+
+## Tools
+
+- [surge](https://surge.sh/)
+	Static web publishing for Front-End Developers
+
+## Articles
+
+- [Git 切割方法：subtree][subtree]
+	
+	介紹了`git subtree`指令。它可以對 repo 中的資料夾做操作，如：push 至其他 remote 或 branch。舉例來說，你想要把`/dist`內的檔案到推送到`gh-pages`這個分支去時，可以下這個指令
+```bash
+git subtree push --prefix dist origin gh-pages
+```
+
+[subtree]: https://kheresy.wordpress.com/2016/03/10/git-subtree/
+
+## Blog posts
+
+<!-- more -->
+
+## Languages
+- [iKnow!][iknow]
+- [LINGVIST][lingvist]
+
+[iknow]: http://iknow.jp
+[lingvist]: https://lingvist.com/
+
+
