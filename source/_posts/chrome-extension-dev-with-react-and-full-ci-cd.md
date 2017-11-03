@@ -202,7 +202,7 @@ webstore_upload(uploadOptions, 'default')
     });
 ```
 
-我們要提供`client_id`,`client_script`,`refresh_token`及 Extension 的`appID`方可使用。特別提醒一下，我把這些值設為 Travis 的環境變數並在執行時取得，而非 commit 在程式碼中。
+我們要提供`client_id`,`client_secret`,`refresh_token`及 Extension 的`appID`方可使用。特別提醒一下，我把這些值設為 Travis 的環境變數並在執行時取得，而非 commit 在程式碼中。
 
 這些值怎麼取得的
 - 前三項怎麼產生請看這 [How to generate Google API keys]
