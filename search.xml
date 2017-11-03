@@ -3,6 +3,57 @@
   
     
     <entry>
+      <title><![CDATA[Y2017W25]]></title>
+      <url>/blog/2017/06/24/Y2017W25/</url>
+      <content type="html"><![CDATA[<h2 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h2><ul>
+<li><p><a href="https://www.udemy.com/webpack-2-the-complete-developers-guide/learn/v4/overview" target="_blank" rel="external">Webpack 2: The Complete Developer’s Guide</a> - <em>Stephen Grider</em></p>
+<ul>
+<li><p>Section 1 ~ Section 9</p>
+<p>結果買了這個課程之後 Webpack@3 就出了😱</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><ul>
+<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6 入门</a> - <em>阮一峰</em><ul>
+<li>前言</li>
+<li>ECMAScript 6简介</li>
+<li>let 和 const 命令</li>
+<li>变量的解构赋值</li>
+<li>字符串的扩展</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul>
+<li><a href="https://surge.sh/" target="_blank" rel="external">surge</a><br>  Static web publishing for Front-End Developers</li>
+</ul>
+<h2 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h2><ul>
+<li><a href="https://kheresy.wordpress.com/2016/03/10/git-subtree/" target="_blank" rel="external">Git 切割方法：subtree</a><br>  介紹了<code>git subtree</code>指令。它可以對 repo 中的資料夾做操作，如：push 至其他 remote 或 branch。舉例來說，你想要把<code>/dist</code>內的檔案到推送到<code>gh-pages</code>這個分支去時，可以下這個指令<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git subtree push --prefix dist origin gh-pages</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 週記 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Webpack </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Y2017W21]]></title>
       <url>/blog/2017/05/27/Y2017W21/</url>
       <content type="html"><![CDATA[<h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><ul>
@@ -69,7 +120,7 @@
 <p>再來我會使用<code>webstore-upload</code>來上傳壓縮檔與發布</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add -D webstore-upload</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// scripts/upload.js</span></div><div class="line"><span class="keyword">const</span> webstore_upload = <span class="built_in">require</span>(<span class="string">'webstore-upload'</span>);</div><div class="line"><span class="keyword">const</span> uploadOptions = &#123;</div><div class="line">    <span class="attr">accounts</span>: &#123;</div><div class="line">        <span class="attr">default</span>: &#123;</div><div class="line">            <span class="attr">publish</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">client_id</span>: process.env.CLIENT_ID,</div><div class="line">            <span class="attr">client_secret</span>: process.env.CLIENT_SECRET,</div><div class="line">            <span class="attr">refresh_token</span>: process.env.REFRESH_TOKEN</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">extensions</span>: &#123;</div><div class="line">        <span class="attr">my_ext</span>: &#123;</div><div class="line">            <span class="attr">appID</span>: process.env.APP_ID,</div><div class="line">            <span class="attr">zip</span>: <span class="string">`<span class="subst">$&#123;process.cwd()&#125;</span>/bundle.zip`</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">uploadExtensions</span>: [<span class="string">'my_ext'</span>]</div><div class="line">&#125;;</div><div class="line"></div><div class="line">webstore_upload(uploadOptions, <span class="string">'default'</span>)</div><div class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(result);</div><div class="line">        <span class="comment">// do somethings nice</span></div><div class="line">        <span class="keyword">return</span> <span class="string">'yay'</span>;</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.error(err);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
-<p>我們要提供<code>client_id</code>,<code>client_script</code>,<code>refresh_token</code>及 Extension 的<code>appID</code>方可使用。特別提醒一下，我把這些值設為 Travis 的環境變數並在執行時取得，而非 commit 在程式碼中。</p>
+<p>我們要提供<code>client_id</code>,<code>client_secret</code>,<code>refresh_token</code>及 Extension 的<code>appID</code>方可使用。特別提醒一下，我把這些值設為 Travis 的環境變數並在執行時取得，而非 commit 在程式碼中。</p>
 <p>這些值怎麼取得的</p>
 <ul>
 <li>前三項怎麼產生請看這 <a href="https://github.com/DrewML/chrome-webstore-upload/blob/master/How%20to%20generate%20Google%20API%20keys.md" target="_blank" rel="external">How to generate Google API keys</a></li>
@@ -96,13 +147,13 @@
             
             <tag> JavaScript </tag>
             
-            <tag> React </tag>
+            <tag> Chrome Extension </tag>
             
-            <tag> travis </tag>
+            <tag> React </tag>
             
             <tag> CI/CD </tag>
             
-            <tag> Chrome Extension </tag>
+            <tag> travis </tag>
             
         </tags>
         

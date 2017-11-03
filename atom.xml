@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kaddopur.github.io/blog/"/>
-  <updated>2017-06-19T06:23:40.000Z</updated>
+  <updated>2017-11-03T07:38:53.000Z</updated>
   <id>http://kaddopur.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Y2017W25</title>
+    <link href="http://kaddopur.github.io/blog/2017/06/24/Y2017W25/"/>
+    <id>http://kaddopur.github.io/blog/2017/06/24/Y2017W25/</id>
+    <published>2017-06-24T04:00:00.000Z</published>
+    <updated>2017-11-03T07:38:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h2><ul>
+<li><p><a href="https://www.udemy.com/webpack-2-the-complete-developers-guide/learn/v4/overview" target="_blank" rel="external">Webpack 2: The Complete Developer’s Guide</a> - <em>Stephen Grider</em></p>
+<ul>
+<li><p>Section 1 ~ Section 9</p>
+<p>結果買了這個課程之後 Webpack@3 就出了😱</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><ul>
+<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6 入门</a> - <em>阮一峰</em><ul>
+<li>前言</li>
+<li>ECMAScript 6简介</li>
+<li>let 和 const 命令</li>
+<li>变量的解构赋值</li>
+<li>字符串的扩展</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul>
+<li><a href="https://surge.sh/" target="_blank" rel="external">surge</a><br>  Static web publishing for Front-End Developers</li>
+</ul>
+<h2 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h2><ul>
+<li><a href="https://kheresy.wordpress.com/2016/03/10/git-subtree/" target="_blank" rel="external">Git 切割方法：subtree</a><br>  介紹了<code>git subtree</code>指令。它可以對 repo 中的資料夾做操作，如：push 至其他 remote 或 branch。舉例來說，你想要把<code>/dist</code>內的檔案到推送到<code>gh-pages</code>這個分支去時，可以下這個指令<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git subtree push --prefix dist origin gh-pages</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><ul>
+<li><a href="http://iknow.jp" target="_blank" rel="external">iKnow!</a></li>
+<li><a href="https://lingvist.com/" target="_blank" rel="external">LINGVIST</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Tutorials&quot;&gt;&lt;a href=&quot;#Tutorials&quot; class=&quot;headerlink&quot; title=&quot;Tutorials&quot;&gt;&lt;/a&gt;Tutorials&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/webpack-2-the-complete-developers-guide/learn/v4/overview&quot;&gt;Webpack 2: The Complete Developer’s Guide&lt;/a&gt; - &lt;em&gt;Stephen Grider&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Section 1 ~ Section 9&lt;/p&gt;
+&lt;p&gt;結果買了這個課程之後 Webpack@3 就出了😱&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Books&quot;&gt;&lt;a href=&quot;#Books&quot; class=&quot;headerlink&quot; title=&quot;Books&quot;&gt;&lt;/a&gt;Books&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://es6.ruanyifeng.com/&quot;&gt;ECMAScript 6 入门&lt;/a&gt; - &lt;em&gt;阮一峰&lt;/em&gt;&lt;ul&gt;
+&lt;li&gt;前言&lt;/li&gt;
+&lt;li&gt;ECMAScript 6简介&lt;/li&gt;
+&lt;li&gt;let 和 const 命令&lt;/li&gt;
+&lt;li&gt;变量的解构赋值&lt;/li&gt;
+&lt;li&gt;字符串的扩展&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="週記" scheme="http://kaddopur.github.io/blog/categories/%E9%80%B1%E8%A8%98/"/>
+    
+    
+      <category term="Webpack" scheme="http://kaddopur.github.io/blog/tags/Webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>Y2017W21</title>
@@ -56,7 +127,7 @@
     <link href="http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/"/>
     <id>http://kaddopur.github.io/blog/2017/05/21/chrome-extension-dev-with-react-and-full-ci-cd/</id>
     <published>2017-05-21T15:32:00.000Z</published>
-    <updated>2017-06-03T08:48:24.000Z</updated>
+    <updated>2017-11-03T07:35:58.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://source.unsplash.com/ObweQkF5w30/700x393" alt=""></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>身為一個前端工程師，在工作上遇到一些需要反覆操作的流程時，總會想要用一些方法來優化它。像我自己也在公司開發了一些 <a href="https://kaddopur.github.io/projects">CLI 及 Chrome Extension</a> 來加速日常的開發。然而在開發了這些工具的同時，我卻也不經意的為自己引入了新的<em>反覆操作</em>，如果可以把測試、過版、壓檔、上傳、發佈……等步驟全部自動化，我就可以更專注的在新功能上的開發上。</p>
@@ -97,7 +168,7 @@
 <p>再來我會使用<code>webstore-upload</code>來上傳壓縮檔與發布</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add -D webstore-upload</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// scripts/upload.js</span></div><div class="line"><span class="keyword">const</span> webstore_upload = <span class="built_in">require</span>(<span class="string">'webstore-upload'</span>);</div><div class="line"><span class="keyword">const</span> uploadOptions = &#123;</div><div class="line">    <span class="attr">accounts</span>: &#123;</div><div class="line">        <span class="attr">default</span>: &#123;</div><div class="line">            <span class="attr">publish</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">client_id</span>: process.env.CLIENT_ID,</div><div class="line">            <span class="attr">client_secret</span>: process.env.CLIENT_SECRET,</div><div class="line">            <span class="attr">refresh_token</span>: process.env.REFRESH_TOKEN</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">extensions</span>: &#123;</div><div class="line">        <span class="attr">my_ext</span>: &#123;</div><div class="line">            <span class="attr">appID</span>: process.env.APP_ID,</div><div class="line">            <span class="attr">zip</span>: <span class="string">`<span class="subst">$&#123;process.cwd()&#125;</span>/bundle.zip`</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">uploadExtensions</span>: [<span class="string">'my_ext'</span>]</div><div class="line">&#125;;</div><div class="line"></div><div class="line">webstore_upload(uploadOptions, <span class="string">'default'</span>)</div><div class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(result);</div><div class="line">        <span class="comment">// do somethings nice</span></div><div class="line">        <span class="keyword">return</span> <span class="string">'yay'</span>;</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.error(err);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
-<p>我們要提供<code>client_id</code>,<code>client_script</code>,<code>refresh_token</code>及 Extension 的<code>appID</code>方可使用。特別提醒一下，我把這些值設為 Travis 的環境變數並在執行時取得，而非 commit 在程式碼中。</p>
+<p>我們要提供<code>client_id</code>,<code>client_secret</code>,<code>refresh_token</code>及 Extension 的<code>appID</code>方可使用。特別提醒一下，我把這些值設為 Travis 的環境變數並在執行時取得，而非 commit 在程式碼中。</p>
 <p>這些值怎麼取得的</p>
 <ul>
 <li>前三項怎麼產生請看這 <a href="https://github.com/DrewML/chrome-webstore-upload/blob/master/How%20to%20generate%20Google%20API%20keys.md" target="_blank" rel="external">How to generate Google API keys</a></li>
@@ -136,13 +207,13 @@
     
       <category term="JavaScript" scheme="http://kaddopur.github.io/blog/tags/JavaScript/"/>
     
-      <category term="React" scheme="http://kaddopur.github.io/blog/tags/React/"/>
+      <category term="Chrome Extension" scheme="http://kaddopur.github.io/blog/tags/Chrome-Extension/"/>
     
-      <category term="travis" scheme="http://kaddopur.github.io/blog/tags/travis/"/>
+      <category term="React" scheme="http://kaddopur.github.io/blog/tags/React/"/>
     
       <category term="CI/CD" scheme="http://kaddopur.github.io/blog/tags/CI-CD/"/>
     
-      <category term="Chrome Extension" scheme="http://kaddopur.github.io/blog/tags/Chrome-Extension/"/>
+      <category term="travis" scheme="http://kaddopur.github.io/blog/tags/travis/"/>
     
   </entry>
   
